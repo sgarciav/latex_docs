@@ -17,19 +17,16 @@ To build all pdfs, open a new terminal and execute:
 
 To build pdf for a single document, substitute the last command for:
 
-	$ make \<paper-name\>
+	$ make DOC_NAME
 
-The pdfs will be generated under ./build/papers/\<paper-name\>/*.pdf
+The pdfs will be generated under `./build/papers/DOC_NAME/*.pdf`.
 
 ## Build with Emacs
 
-Assuming that your emacs configuration is setup accordingly, open a new terminal
-and execute:
+Assuming that your emacs configuration is setup accordingly, open the `*.tex`
+file and compile with command `C-c C-c`.
 
-	$ cd /path/to/papers/\<paper-name\>
-	$ make \<paper-name\>
-
-The pdf is generated under ./papers/\<paper-name\>/*.pdf
+The pdf is generated under `./papers/DOC_NAME/*.pdf`
 
 # Adding new documents
 
@@ -41,7 +38,7 @@ You probably want to start with the templates in IEEEtran-template:
 
 # Clean papers repo
 
-Running the ./clean.sh script will remove the common LaTex temporary files and
+Running the `clean.sh` script will remove the common LaTeX temporary files and
 it will remove the out-of-source cmake build directory. It will not remove any
 pdf files.
 
