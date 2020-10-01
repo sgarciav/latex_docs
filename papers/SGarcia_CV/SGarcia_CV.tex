@@ -1,0 +1,765 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Medium Length Professional CV
+% LaTeX Template
+% Version 2.0 (8/5/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Trey Hunner (http://www.treyhunner.com/)
+%
+% Important note:
+% This template requires the resume.cls file to be in the same directory as the
+% .tex file. The resume.cls file provides the resume style used for structuring the
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%------------------------------------------------------------------------------
+
+\documentclass{resume} % Use the custom resume.cls style
+
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+\usepackage{marvosym}
+\usepackage{amsmath}
+\usepackage{eso-pic}% http://ctan.org/pkg/eso-pic
+\usepackage{lipsum}% http://ctan.org/pkg/lipsum
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{color}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+
+\newcommand{\sectionspace}{\vspace{3mm}}
+\newcommand{\Sergio}{\textbf{S. Garc\'{i}a-Vergara}}
+\newcommand{\SuperPop}{Super Pop VR\textsuperscript{TM}\space}
+\newcommand{\simplelistentry}[3]{\textit{#1}, {#2} \hfill {#3}}
+\newcommand{\fixme}{\textcolor{red}{\textbf{fix me}} \space}
+\newcommand{\attention}[1]{\noindent \fixme \textcolor{red}{#1}}
+
+\name{Sergio E. Garc\'{i}a-Vergara} % Your name
+
+\address{\Telefon \space Cell: (787) 383 - 0475 ; Office: (404) 407 - 8184}
+\address{e\Letter \space sergiodotgarcia@gmail.com}
+\address{\Letter \space 671 Hillpine Dr NE \textbullet Atlanta, GA 30306}
+
+
+\begin{document}
+
+% add 'US Citizen' at top right corner of first page
+\AddToShipoutPictureBG*{%
+  \AtPageUpperLeft{%
+    \hspace{\paperwidth}%
+    \raisebox{-\baselineskip}{%
+      \makebox[-25pt][r]{US Citizen}
+}}}%
+
+
+
+%------------------------------------------------------------------------------
+%	RESEARCH INTERESTS SECTION
+%------------------------------------------------------------------------------
+
+
+\begin{rSection}{Research Interests}
+
+  Autonomous robotic systems, systems and controls, healthcare robotics,
+  assistive technology, human-robot interaction, pattern recognition, and
+  machine learning.
+
+\end{rSection}
+
+
+
+
+%------------------------------------------------------------------------------
+%	SUMMARY SECTION
+%------------------------------------------------------------------------------
+
+\iffalse
+\begin{rSection}{Summary}
+
+\begin{itemize}
+\item Extensive experience conducting user studies, including experiment design
+  and data analysis.
+\item Experience with the Kinect SDK from Microsoft to develop a VR game for the
+  rehabilitation of children who have cerebral palsy.
+\item Experience developing algorithms to assess the upper-body kinematic
+  performance of children who have cerebral palsy. \\
+\end{itemize}
+
+\end{rSection}
+\fi
+
+
+
+
+%------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%------------------------------------------------------------------------------
+
+\sectionspace
+\begin{rSection}{Education}
+
+{\bf Georgia Institute of Technology} \hfill {\bf Atlanta, GA} \\
+\textit{Ph.D. in Electrical and Computer Engineering} \hfill May 2017 \\
+Dissertation: \textit{Coupling of an Objective and Quantifiable Methodology for Assessing Upper-body Movements with VR Gaming Platforms}
+
+{\bf Georgia Institute of Technology} \hfill {\bf Atlanta, GA} \\
+\textit{MS in Electrical and Computer Engineering} \hfill May 2014 \\ Graduated Cum Laude \\
+Minor: \textit{Computer Science}
+
+{\bf University of Puerto Rico at Mayag\"{u}ez} \hfill {\bf Mayag\"{u}ez, PR} \\
+\textit{BS in Electrical Engineering} \hfill June 2011 \\
+Graduated Magna Cum Laude
+
+\end{rSection}
+
+
+
+
+
+%------------------------------------------------------------------------------
+%	SKILLS SECTION
+%------------------------------------------------------------------------------
+
+\sectionspace
+\begin{rSection}{Skills}
+
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Programming Languages & Python, C, C++, C\#, Java \\
+
+Engineering Software & ROS, Matlab, Visual Studio, Simulink, LabView, Eclipse, PSice \\
+
+Operating Systems & Linux, Windows \\
+
+Tools & \LaTeX, Emacs, Git, Cygwin \\
+
+Robotic Platforms & DARwin-OP, AmigoBot, Pioneer 3-AT \\
+
+Languages & Fully proficient in English and Spanish. (Basic knowledge in German).
+
+\end{tabular}
+
+\end{rSection}
+
+
+
+
+
+%------------------------------------------------------------------------------
+%	RESEARCH EXPERIENCE SECTION
+%------------------------------------------------------------------------------
+
+\sectionspace
+\begin{rSection}{Work Experience}
+%------------------------------------------------
+
+\begin{rSubsection}{Research Engineer II}{January 2017 - present}{Georgia Tech Research Institute $\vert$ Atlanta, GA}{Supervisor: Dr. Charles Pippin}
+
+\item
+\begin{itemize}
+\item Developing algorithms for pattern recognition, machine learning, and
+  controls.
+
+\item Responsibilities include algorithm development, software development,
+  proposal creation, and technical reporting.
+
+\end{itemize}
+
+\end{rSubsection}
+
+%------------------------------------------------
+
+\begin{rSubsection}{Graduate Research Assistant}{May 2012 - December 2016}{Georgia Tech HumAnS Lab $\vert$ Atlanta, GA}{Supervisor: Dr. Ayanna M. Howard}
+
+\item
+\begin{itemize}
+\item Developed an interactive virtual reality gaming system for rehabilitation
+  in the home environment.
+
+\item Developed an objective and quantifiable methodology for evaluating the
+  kinematic performance of individuals who have some form of motor skills
+  disorder.
+
+\item Developed a pattern recognition algorithm to determine the level of the
+  user's kinematic performance such that the virtual reality platform can
+  autonomously adapt to the user's needs.
+
+\end{itemize}
+
+\end{rSubsection}
+
+%------------------------------------------------
+
+\begin{rSubsection}{Graduate Research Assistant}{August 2011 - May 2012}{Georgia Tech MRL Lab $\vert$ Atlanta, GA}{Supervisor: Dr. Ronald C. Arkin}
+
+\item
+\begin{itemize}
+
+\item Implemented the architecture and support for knowledge sharing across
+  heterogeneous robotic agents as part of the MAST (Micro Autonomous Systems
+  Technology) project.
+
+\item Designed the conceptual spaces for the different robotic platforms based
+  on their respective sensors as a base for the communication and interpretation
+  of the acquired data (i.e. vision, laser range finder, thermal, etc).
+
+\end{itemize}
+
+\end{rSubsection}
+
+%------------------------------------------------
+
+\begin{rSubsection}{Summer Undergraduate Researcher}{Summer 2010}{University of California $\vert$ Berkeley, CA}{Supervisor: Dr. Seth Sanders}
+
+\item
+\begin{itemize}
+\item Used COMSOL Multiphysics to design a 3-phase 6-pole permanent magnet
+  alternator to be coupled with a Stirling engine system.
+\end{itemize}
+
+\end{rSubsection}
+
+%------------------------------------------------
+
+\begin{rSubsection}{Summer Undergraduate Researcher}{Summer 2009}{Purdue University $\vert$ West Lafayette, IN}{Supervisor: Dr. Eric Stach}
+
+\item
+\begin{itemize}
+\item Used LabVIEW to write the needed drivers to couple mass flow controllers
+  with the Birck Nanotechnology Center's transmission electron microscope.
+\end{itemize}
+
+\end{rSubsection}
+
+%------------------------------------------------
+
+\begin{rSubsection}{Undergraduate Research Assistant}{August 2009 - January 2011}{University of Puerto Rico $\vert$ Mayag\"{u}ez, PR}{Supervisor: Dr. Eduardo Ortiz}
+
+\item
+\begin{itemize}
+\item Designed the control system to control the speed of a DC motor powered by
+  a fuel cell.
+\item Designed, built, and programmed a nonholonomic small robot car to find the
+  center of an arbitrary 16x16 square maze.
+\end{itemize}
+
+\end{rSubsection}
+
+%------------------------------------------------
+
+\begin{rSubsection}{Undergraduate Research Assistant}{Summer 2008}{University of Puerto Rico $\vert$ Humacao, PR}{Supervisor: Dr. Rolando Oyola}
+
+\item
+\begin{itemize}
+\item Interfaced a fast spectroscopy device with an oscilloscope using LabVIEW
+  to automate a nanosecond-laser flash photolysis system.
+\end{itemize}
+
+\end{rSubsection}
+
+
+%------------------------------------------------
+\end{rSection}
+
+
+
+
+
+
+
+%------------------------------------------------------------------------------
+%	PUBLICATIONS SECTION
+%------------------------------------------------------------------------------
+
+\sectionspace
+\begin{rSection}{Publications and Presentations}
+%------------------------------------------------
+
+% IN PREPARATION
+\begin{rSubsection}{In Preparation}{}{}{}
+\item
+\begin{enumerate}
+
+\item \Sergio, Y.P. Chen, and A.M. Howard, ``Instance- versus Individual-based
+  Upper-body Movement Classification for Ground Truth Movement Baseline
+  Selection,'' \attention{where to publish?}
+
+\item \Sergio, Y.P. Chen, and A.M. Howard, ``Algorithms for computing
+  upper-extremity reaching kinematics,'' \textit{IEEE Transactions on Neural
+    Systems and Rehabilitation Engineering}, 2017.
+
+\end{enumerate}
+\end{rSubsection}
+
+
+
+\sectionspace
+%------------------------------------------------
+% JOURNALS and BOOK CHAPTERS
+\begin{rSubsection}{Journal Publications and Book Chapters}{}{}{}
+\item
+\begin{enumerate}
+
+\item Y.P. Chen, \Sergio, and A.M. Howard, ``Effect of feedback from a socially
+  interactive humanoid robot on reaching kinematics in children with and without
+  cerebral palsy,'' \textit{Developmental Neurorehabilitation},
+  2017. \attention{Make sure that this is indeed a journal}
+
+\item Y.P. Chen, \Sergio, and A.M. Howard, ``Effect of a Home-Based Virtual
+  Reality Intervention for Children with Cerebral Palsy using \SuperPop
+  Evaluation Metrics: A Feasibility Study,'' \textit{Rehabilitation Research and
+    Practice}, 2015.
+
+\item \Sergio, L. Brown, H.W. Park, and A.M. Howard, ``Engaging children in play
+  therapy: The coupling of virtual reality games with social robotics,''
+  \textit{Technologies of Inclusive Well-Being}, Springer Berlin Heildelberg,
+  pp. 139-163, 2014.
+\end{enumerate}
+\end{rSubsection}
+
+
+
+\sectionspace
+%------------------------------------------------
+% REFEREED CONFERENCE PUBLICATIONS
+
+\begin{rSubsection}{Refereed Conference Publications}{}{}{}
+\item
+\begin{enumerate}
+
+\item D. Bryant, J. Boyd, J. Harris, M. Smith, \Sergio, Y.P. Chen, and
+  A.M. Howard, ``An Infant Smart-Mobile System to Encourage Kicking Movements in
+  Infants At-Risk of Cerebral Palsy,'' \textit{IEEE Workshop on Advanced
+    Robotics and its Social Impacts (ARSO)}, pp. 1-5, 2017.
+
+\item \Sergio, P. Robinette, Y.P. Chen, and A.M. Howard, ``Validation of a
+  Physical Rehabilitation Game using Markerless versus Marker-based Motion
+  Capture Systems,'' \textit{IEEE EMBS Conference}, 2016.
+
+\item \Sergio, L. Brown, Y.P. Chen, and A.M. Howard, ``Increasing the Efficacy
+  of Rehabilitation Protocols for Children via a Robotic Playmate Providing
+  Real-time Corrective Feedback,'' \textit{IEEE Conference on Robot and Human
+    Interactive Communication (Ro-Man)}, pp. 700-705, 2016.
+
+\item L. Brown, \Sergio, and A.M. Howard, ``Evaluating the Effect of Robot
+  Feedback on Motor Skill Performance in Therapy Games,'' \textit{IEEE
+    Conference on Systems, Man, and Cybernetics (SMC)}, pp. 1060-1065, 2015.
+
+\item \Sergio, H. Li, and A.M. Howard, ``Increasing \SuperPop Users' Intrinsic
+  Motivation by Improving the Game's Aesthetics,'' \textit{International
+    Conference on Universal Access in Human-Computer Interaction}, pp. 432-441,
+  2015.
+
+\item \Sergio, M.M. Serrano, Y.P. Chen, and A.M. Howard, ``Developing a Baseline
+  for Upper-body Motor Skill Assessment Using a Robotic Kinematic Model,''
+  \textit{IEEE Conference on Robot and Human Interactive Communication
+    (Ro-Man)}, pp. 911-916, 2014.
+
+\item \Sergio, and A.M. Howard, ``Three-dimensional Fitts Law Model used to
+  Predict Movement Time in Serious Games for Rehabilitation,''
+  \textit{International Conference on Virtual, Augmented and Mixed Reality},
+  pp. 287-297, 2014.
+
+\item \Sergio, Y.P. Chen, and A.M. Howard, ``\textit{\SuperPop}: an Adaptable
+  Virtual Reality Game for Upper-Body Rehabilitation,'' \textit{International
+    Conference on Human-Computer Interaction}, pp. 40-49, 2013.
+
+\item R.C. Arkin, \Sergio, and S.G. Lee, ``Architectural Design and Support for
+  Knowledge Sharing Across Heterogeneous MAST systems,'' \textit{SPIE
+    Conference}, pp. 84070C, 2012.
+
+\item A.M. Howard, L. Roberts, \Sergio, and R. Quarells, ``Using Mixed Reality
+  to Map Exercise Demonstrations to a Robot Exercise Coach,'' \textit{IEEE Mixed
+    and Augmented Reality (ISMAR) Conference}, 2012.
+
+\item P.J. Gonz\'{a}lez-Rivera, J. Santiago-Gonz\'{a}lez, \Sergio, and
+  E. Ortiz-Rivera, ``Design of an Observer and Speed Controller for a DC Motor
+  Fed by Fuel Cells and DC to DC Converters,'' \textit{IEEE Power and Energy
+    Society General Meeting}, pp. 1-6, 2011.
+
+\item \Sergio, P. Le\'{o}n, Y.J. D\'{i}az-Mercado, and E. Ortiz-Rivera, ``An
+  Integrated Undergraduate Research Experience in Control, Power Electronics,
+  and Design using a Micromouse,'' \textit{IEEE Frontiers in Education
+    Conference}, pp. T3D-1, 2010.
+
+
+\end{enumerate}
+\end{rSubsection}
+
+
+
+%------------------------------------------------
+% REFEREED CONFERENCE PRESENTATIONS
+
+
+\begin{rSubsection}{Refereed Conference Presentations}{}{}{}
+\item
+\begin{enumerate}
+
+\item L. Clackum, F. Fayyaz, T. Gordon, K. Lansing, Y.P. Chen, \Sergio,
+  A.M. Howard, B. Weissman, and J. Hallman-Cooper, ``Effect of Functional
+  Strength Training to Improve Arm Function in Children with Cerebral Palsy: A
+  Case Study,'' \textit{Combined Sections Meeting, American Physical Therapy
+    Association}, New Orleans, LA, February, 2018.
+
+\item Y.P. Chen, \Sergio, and A.M. Howard, ``Evaluation of trials necessary to
+  achieve performance stability in a reaching kinematics movement analysis
+  game,'' \textit{Combined Sections Meeting, American Physical Therapy
+    Association}, New Orleans, LA, February, 2018.
+
+\item Y.P. Chen, \Sergio, A.M. Howard, ``Examining the Effect of Feedback from a
+  Humanoid Robot on Reaching Kinematics in Children with Cerebral Palsy,''
+  (Poster presented at) \textit{NEXT Conference, American Physical Therapy
+    Association}, Boston, MA, June, 2017.
+
+\item L. Clackum, F. Fayyaz, T. Gordon, K. Lansing, Y.P. Chen, \Sergio, and
+  A.M. Howard, ``Effect of Rhythmic Auditory Stimulation in Virtual Reality
+  Games to Improve Arm Function in Children with Cerebral Palsy: A Case Study,''
+  (Poster presented at) \textit{NEXT Conference, American Physical Therapy
+    Association}, Boston, MA, June, 2017.
+
+\item C. Beegle, A. Rollins, J. Tyra, Y.P. Chen, \Sergio, and A.M. Howard,
+  ``Test-retest Reliability and Minimal Detectable Change in the \SuperPop Game
+  in Children with and without Cerebral Palsy,'' (Poster presented at)
+  \textit{Combined Sections Meeting, American Physical Therapy Association}, San
+  Antonio, TX, February, 2017.
+
+\item E. Danish, S. Epling, S. Smelser, Y. Zhang, Y.P. Chen, \Sergio,
+  A.M. Howard, B. Weissman, and J. Hallman-Cooper, ``Virtual Reality Gaming
+  System can be used in Home Based Treatment in Children with Cerebral Palsy: A
+  Case Study,'' (Poster presented at) \textit{NEXT Conference, American Physical
+    Therapy Association}, Nashville, TN, June, 2016.
+
+\item E. Bermudez, M. Layman, E. Shepard, Y.P. Chen, \Sergio, and A.M. Howard,
+  ``Test-Retest Reliability and Minimal Detectable Change in the \SuperPop game
+  in Healthy Children,'' (Poster to be presented at) \textit{Combined Sections
+    Meeting, American Physical Therapy Association}, Anaheim, CA, February 2016.
+
+\item Y.P. Chen, \Sergio, and A.M. Howard, ``Test-Retest Reliability and Minimal
+  Detectable Change of \SuperPop in Healthy Adults,'' (Poster presented at)
+  \textit{Combined Sections Meeting, American Physical Therapy Association},
+  Indiannapolis, IN, February, 2015.
+
+\item B. Denmark, A. Harrod, B. Steele, T. Weekley, \Sergio, A.M. Howard, and
+  Y.P. Chen, ``Effect of Virtual Reality Intervention on Upper-Extremity
+  Function in a Child with Cerebral Palsy: A Case Study,'' (Poster presented at)
+  \textit{Physical Therapy Association of Georgia}, Atlanta, GA, September,
+  2014.
+
+\end{enumerate}
+\end{rSubsection}
+
+
+
+%------------------------------------------------
+\end{rSection}
+
+
+
+
+
+
+
+
+%------------------------------------------------------------------------------
+%	PATENTS SECTION
+%------------------------------------------------------------------------------
+
+
+\sectionspace
+
+\begin{rSection}{Patents}
+%------------------------------------------------
+
+% PATENTS
+\begin{rSubsection}{Patents}{}{}{}
+\item
+\begin{enumerate}
+\item R.E. Torres-Mu\~{n}iz, \textbf{S.E. Garc\'{i}a-Vergara},
+  B.A. Llorens-Bonilla, D. S\'{a}nchez-Cordero, and M. Lizama, ``Switch-Actuated
+  Joystick for Power Wheelchairs'', U.S. Patent 8 622 166 B1, January 7, 2014.
+\end{enumerate}
+
+Developed a switch-actuated adapter for joystick controlled wheelchairs such
+that individuals with limited mobility can continue making use of their chairs
+and avoid spending money on new ones.
+
+
+\end{rSubsection}
+%------------------------------------------------
+\end{rSection}
+
+
+
+%------------------------------------------------------------------------------
+%	DEMONSTRATIONS SECTION
+%------------------------------------------------------------------------------
+
+\iffalse
+\sectionspace
+\begin{rSection}{Invited Talks \& Demonstrations}
+
+\begin{enumerate}
+\item one
+\end{enumerate}
+
+
+\end{rSection}
+\fi
+
+
+
+
+%------------------------------------------------------------------------------
+%	FELLOWSHIPS AND AWARDS SECTION
+%------------------------------------------------------------------------------
+
+
+\sectionspace
+
+\begin{rSection}{Fellowships \& Awards}
+
+\begin{enumerate}
+
+\item \simplelistentry{\attention{name of mentorship award}}{Georgia Tech
+    Research Institute}{2017}
+
+\item \simplelistentry{Sam Chih Foundation Award}{Georgia Institute of
+    Technology}{2016}
+
+\item \simplelistentry{Alfred P. Sloan Foundation Fellowship}{Georgia Institute
+    of Technology}{2013-2016}
+
+\item \simplelistentry{Goizueta Fellowship}{Georgia Institute of
+    Technology}{2012-2016}
+
+\item \simplelistentry{NSF Graduate Research Fellowship}{Georgia Institute of
+    Technology}{2012-2015}
+
+\item \simplelistentry{Marion \& Henry Bourne ECE Graduate Fellowship}{Georgia
+    Institute of Technology}{2011}
+
+\item \simplelistentry{Member of the Tau Beta Pi National Honor
+    Society}{University of Puerto Rico at Mayag\"{u}ez}{2010}
+
+\item \simplelistentry{Puerto Rico - Louis Stokes Alliance for Minority Program
+    (PRLSAMP) Scholarship}{University of Puerto Rico at Mayag\"{u}ez}{2008}
+
+\item \simplelistentry{Member of the Dean's List throughout undergraduate
+    studies}{University of Puerto Rico at Mayag\"{u}ez}{2006-2011}
+
+\end{enumerate}
+
+\end{rSection}
+
+
+
+
+
+
+
+%------------------------------------------------------------------------------
+%	SELECTED PRESENTATIONS SECTION
+%------------------------------------------------------------------------------
+
+\iffalse
+\sectionspace
+\begin{rSection}{Selected Academic Presentations}
+%------------------------------------------------
+
+% ORAL PRESENTATIONS
+\begin{rSubsection}{Academic Presentations}{}{}{}
+\item
+
+\begin{enumerate}
+  \Sergio, Y.P. Chen, and A. Howard, ``Super Pop VR\texttrademark : an Adaptable
+  Virtual Reality Game for Upper-Body Rehabilitation,''
+  \textit{HCI-International Conference}, Las Vegas, NV, July 2013.
+
+\item R.C. Arkin, \Sergio, and S.G. Lee. ``Architectural Design and Support for
+  Knowledge Sharing Across Heterogeneous MAST systems,'' \textit{SPIE
+    Conference}, Baltimore, MD, May 2012.
+
+\item \Sergio, S.M. Kim, and E. Stach, ``Automation of the Birck Nanotechnology
+  Center's Transmission Electron Microscope using Mass Flow Control,''
+  \textit{SURF Program}, West Lafayette, IN, August 2009.
+\end{enumerate}
+
+\end{rSubsection}
+
+%------------------------------------------------
+
+% POSTER PRESENTATIONS
+\begin{rSubsection}{Poster Presentations}{}{}{}
+
+\item
+\begin{enumerate}
+\item \Sergio, and A. Howard, ``An Objective Measure of Upper Extremity
+  Kinematics in Children during Rehabilitation Sessions,'' \textit{Atlanta
+    Chapter Society for Neuroscience}, Emory, Atlanta, GA, November 2013.
+
+\item \Sergio, M. He, and S. Sanders, ``Design of a 3-phase 6-pole Permanent
+  Magnet Alternator for a Stirling Engine System,'' \textit{SUPERB Program},
+  Berkeley, CA, August 2010.
+
+\end{enumerate}
+\end{rSubsection}
+
+%------------------------------------------------
+\end{rSection}
+\fi
+
+
+
+
+%------------------------------------------------------------------------------
+%	TEACHING SECTION
+%------------------------------------------------------------------------------
+
+
+\sectionspace
+
+\begin{rSection}{Teaching Experience}
+
+% CERTIFICATION
+\begin{rSubsection}{Teaching Certificate}{May 2015}{Tech to Teaching}{Georgia
+    Tech $\vert$ Atlanta, GA}
+\item
+\begin{itemize}
+\item Higher Education Pathway Intermediate Certificate
+\end{itemize}
+\end{rSubsection}
+
+
+% TEACHING EXPERIENCE
+\begin{rSubsection}{Instructor on Record}{August 2014 - December 2014}{Course:
+    Graduate Teaching Assistant Preparations}{Georgia Tech $\vert$ Atlanta, GA}
+\item
+\begin{itemize}
+\item Prepared weekly lesson plans and gave in-class lectures.
+\item Graded homeworks and course materials.
+\end{itemize}
+\end{rSubsection}
+
+
+\begin{rSubsection}{Graduate Teaching Assistant}{June 2013 - August
+    2013}{Course: Linear Circuits}{Georgia Tech $\vert$ Atlanta, GA}
+\item
+\begin{itemize}
+\item Answered students' questions in the classroom and via the student forums
+  on the Coursera website.
+\item Prepared and explained practice problems to help students better
+  understand the material.
+\end{itemize}
+\end{rSubsection}
+
+\end{rSection}
+
+
+
+
+%------------------------------------------------------------------------------
+%	SERVICE & VOLUNTEER WORK SECTION
+%------------------------------------------------------------------------------
+
+
+\sectionspace
+
+\begin{rSection}{Service \& Volunteer Work}
+%------------------------------------------------
+
+% REVIEWER
+\begin{rSubsection}{Reviewer}{}{}{}
+\item
+\begin{enumerate}
+\item IEEE International Symposium on Robot \& Human Interactive Communication (RO-MAN)
+\end{enumerate}
+\end{rSubsection}
+
+
+% OUTREACH
+
+\begin{rSubsection}{Outreach}{}{}{}
+\item
+\begin{enumerate}
+
+\item \simplelistentry{Coach for the First Lego League Competition}{East Atlanta
+    Kids Club}{2017}
+
+\item \simplelistentry{Brownwood Bike Rally Volunteer}{East Atlanta Kids
+    Club}{2017}
+
+\item \simplelistentry{Summer Undergraduate Research in Engineering (SURE)
+    Program, Graduate Student Mentor}{Georgia Institute of Technology}{2016}
+
+\item \simplelistentry{Middle School STEM Camps, Graduate Student
+    Mentor}{Georgia Institute of Technology}{2016}
+
+\item \simplelistentry{National Robotics Week, Robotics and Intelligent Machines
+    Center Open House}{Georgia Institute of Technology}{2016}
+
+\item \simplelistentry{GoSTEM Latino STEM Fair}{Georgia Institute of
+    Technology}{2015-2016}
+
+\item \simplelistentry{FOCUS Program, New Students Visitation Weekend}{Georgia
+    Institute of Technology}{2013-2016}
+
+\item \simplelistentry{ECE Recruiting Events, Lab Tours and Demos}{Georgia
+    Institute of Technology}{2013-2016}
+
+\item \simplelistentry{Chestatee Academy Middle School Latino Students Visit,
+    Graduate Student Panel}{Georgia Institute of Technology}{2015}
+
+\item \simplelistentry{GoSTEM Latino STEM Education Day}{Meadowcreek High
+    School}{2014-2015}
+
+\item \simplelistentry{Science Fair Judge}{Lilburn Elementary School}{2014}
+
+\item \simplelistentry{Technology Student Association (TSA), High School TEAMS
+    Competition}{Georgia Institute of Technology}{2013-2014}
+
+\item \simplelistentry{H.O.T. Days, Robot Programming Workshop}{Georgia
+    Institute of Technology}{2013-2014}
+
+\item \simplelistentry{Campbell Middle School Minority Students Visit, Graduate
+    Student Panel}{Georgia Institute of Technology}{2013}
+
+\item \simplelistentry{Southwest Miami High School Latino Students Visit,
+    Graduate Student Panel}{Georgia Institute of Technology}{2012}
+
+\end{enumerate}
+\end{rSubsection}
+
+%------------------------------------------------
+\end{rSection}
+
+
+
+
+%------------------------------------------------------------------------------
+%	REFERENCES SECTION
+%------------------------------------------------------------------------------
+
+\sectionspace
+\begin{rSection}{References}
+Available upon request.
+\end{rSection}
+
+
+%------------------------------------------------------------------------------
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
