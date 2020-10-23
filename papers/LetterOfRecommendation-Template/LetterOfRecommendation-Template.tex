@@ -1,0 +1,79 @@
+%------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%------------------------------------------------------------------------------
+
+\documentclass{letter}
+\usepackage[top=0.5cm, bottom=0.5cm]{geometry} % Document margins
+% \usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+\usepackage{marvosym}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{color}
+\usepackage{lipsum}% http://ctan.org/pkg/lipsum
+\usepackage{fancyhdr}
+
+% \pagestyle{fancy}
+% \fancyhf{}
+% \renewcommand{\headrulewidth}{0pt}
+
+%% Number of Page
+% \rfoot{Page \thepage\ of \pageref{LastPage}}
+
+\address{\\ \\ \\ \large \textbf{Sergio Garc\'{i}a-Vergara} \\ 2799 White Oak Ln \\
+  Decatur, GA, 30032 \\}
+
+% \address{\Telefon \space Cell: (787) 383 - 0475 ; Office: (404) 407 - 8184}
+% \address{e\Letter \space sergiodotgarcia@gmail.com}
+% \address{\Letter \space 671 Hillpine Dr NE \textbullet Atlanta, GA 30306}
+
+% % add 'US Citizen' at top right corner of first page
+% \AddToShipoutPictureBG*{%
+%   \AtPageUpperLeft{%
+%     \hspace{\paperwidth}%
+%     \raisebox{-\baselineskip}{%
+%       \makebox[-25pt][r]{US Citizen}
+% }}}%
+
+\newcommand{\sectionspace}{\vspace{3mm}}
+\newcommand{\Sergio}{\textbf{Sergio Garc\'{i}a-Vergara}}
+\newcommand{\fixme}{\textcolor{red}{\textbf{fix me}} \space}
+\newcommand{\attention}[1]{\noindent \fixme \textcolor{red}{#1}}
+
+\date{}
+
+
+%------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+% ------------------------------------------------------------------------------
+
+\begin{document}
+\begin{letter}
+{
+\centering \Large \textbf{Letter of Recommendation}
+}
+
+\hfill
+\begin{wrapfigure}[1]{l}{0.65\linewidth}%{height=0.65\textheight}
+    \centering
+    \includegraphics[width=0.65\textwidth]{figs/GTRIlogo.jpeg}
+\end{wrapfigure}
+
+\opening{To Whom it May Concern:} % admissions officer
+\medskip
+
+Here goes the letter
+
+\medskip
+Sincerely, \\
+\Sergio \\
+
+\end{letter}
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
