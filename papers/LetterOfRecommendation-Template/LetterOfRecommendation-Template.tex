@@ -21,7 +21,12 @@
 %% Number of Page
 % \rfoot{Page \thepage\ of \pageref{LastPage}}
 
-\address{\\ \\ \\ \large \textbf{Sergio Garc\'{i}a-Vergara} \\ 2799 White Oak Ln \\
+\newcommand{\sectionspace}{\vspace{3mm}}
+\newcommand{\Sergio}{\textbf{Sergio Garc\'{i}a-Vergara, Ph.D.}}
+\newcommand{\fixme}{\textcolor{red}{\textbf{fix me}} \space}
+\newcommand{\attention}[1]{\noindent \fixme \textcolor{red}{#1}}
+
+\address{\\ \\ \\ \large \textbf{\Sergio} \\ 2799 White Oak Ln \\
   Decatur, GA, 30032 \\}
 
 % \address{\Telefon \space Cell: (787) 383 - 0475 ; Office: (404) 407 - 8184}
@@ -36,12 +41,7 @@
 %       \makebox[-25pt][r]{US Citizen}
 % }}}%
 
-\newcommand{\sectionspace}{\vspace{3mm}}
-\newcommand{\Sergio}{\textbf{Sergio Garc\'{i}a-Vergara}}
-\newcommand{\fixme}{\textcolor{red}{\textbf{fix me}} \space}
-\newcommand{\attention}[1]{\noindent \fixme \textcolor{red}{#1}}
-
-\date{}
+\date{\today}
 
 
 %------------------------------------------------------------------------------
@@ -51,22 +51,26 @@
 \begin{document}
 \begin{letter}
 {
-\centering \Large \textbf{Letter of Recommendation}
+% \centering \Large \textbf{Letter of Recommendation}
 }
 
 \hfill
 \begin{wrapfigure}[1]{l}{0.65\linewidth}%{height=0.65\textheight}
-    \centering
-    \includegraphics[width=0.65\textwidth]{figs/GTRIlogo.jpeg}
+    % \centering
+    \includegraphics[width=0.5\textwidth]{figs/GTRIlogo.jpeg}
 \end{wrapfigure}
 
 \opening{To Whom it May Concern:} % admissions officer
 \medskip
 
-Here goes the letter
+Here goes the letter.
+
 
 \medskip
 Sincerely, \\
+\medskip
+\medskip
+
 \Sergio \\
 
 \end{letter}
