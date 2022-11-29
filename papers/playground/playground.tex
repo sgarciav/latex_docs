@@ -212,8 +212,33 @@ to create these diagrams.
 
 % @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-\section{hello world}
+\section{math}
 % ---------------------------
+
+\begin{equation} \label{eq:manual_transform}
+\resizebox{.9\hsize}{!}{$
+  v_{out} =
+
+\begin{bmatrix}
+R_{odom} & \begin{bmatrix}
+x_{odom} \\ y_{odom} \\ z_{odom}
+\end{bmatrix} \\
+0 & 1
+\end{bmatrix} *
+
+\begin{bmatrix}
+R_{trans} & \begin{bmatrix}
+x_{trans} \\ y_{trans} \\ z_{trans}
+\end{bmatrix} \\
+0 & 1
+\end{bmatrix} *
+
+\begin{bmatrix}
+x_{v_in} \\ y_{v_in} \\ z_{v_in} \\ 1
+\end{bmatrix}}
+
+\end{equation}
+
 
 
 % @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
