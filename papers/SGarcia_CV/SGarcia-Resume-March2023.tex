@@ -1,0 +1,410 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Medium Length Professional CV
+% LaTeX Template
+% Version 2.0 (8/5/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Trey Hunner (http://www.treyhunner.com/)
+%
+% Important note:
+% This template requires the resume.cls file to be in the same directory as the
+% .tex file. The resume.cls file provides the resume style used for structuring the
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%------------------------------------------------------------------------------
+
+\documentclass{resume} % Use the custom resume.cls style
+
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+\usepackage{marvosym}
+\usepackage{amsmath}
+\usepackage{eso-pic}% http://ctan.org/pkg/eso-pic
+\usepackage{lipsum}% http://ctan.org/pkg/lipsum
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{fontawesome}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+\rfoot{Page \thepage\ of \pageref{LastPage}}
+
+\newcommand{\sectionspace}{\vspace{3mm}}
+\newcommand{\Sergio}{\textbf{S. Garc\'{i}a-Vergara}}
+\newcommand{\SuperPop}{Super Pop VR\textsuperscript{TM}\space}
+\newcommand{\simplelistentry}[3]{\textit{#1}, {#2} \hfill {#3}}
+\newcommand{\fixme}{\textcolor{red}{\textbf{fix me}} \space}
+\newcommand{\attention}[1]{\noindent \fixme \textcolor{red}{#1}}
+
+\name{Sergio E. Garc\'{i}a-Vergara} % Your name
+
+\address{\Telefon \space Cell: (787) 383 - 0475}
+\address{e\Letter \space sergiodotgarcia@gmail.com \textbullet \faGithub github.com/sgarciav}
+\address{\Letter \space 2799 White Oak Ln \textbullet Decatur, GA 30032}
+
+
+\begin{document}
+
+% add 'US Citizen' at top right corner of first page
+\AddToShipoutPictureBG*{%
+  \AtPageUpperLeft{%
+    \hspace{\paperwidth}%
+    \raisebox{-\baselineskip}{%
+      \makebox[-25pt][r]{US Citizen}
+}}}%
+
+
+%------------------------------------------------------------------------------
+%	OBJECTIVE SECTION
+%------------------------------------------------------------------------------
+
+\begin{rSection}{Objective}
+
+  %% Seeking opportunities to offer my consulting services to individuals or
+  %% organizations in need of expert advice and guidance in autonomous robotic
+  %% systems.
+
+\begin{itemize}
+\item Seeking opportunities to offer my consulting services to individuals or
+  organizations in need of expert advice and guidance in autonomous robotic
+  systems.
+\item My area of expertise lies in the field of robotics, with more than 11
+  years of experience in algorithm development for autonomous robotic systems,
+  computer vision, software engineering, machine learning, and human-robot
+  interaction.
+\end{itemize}
+
+\end{rSection}
+
+
+%------------------------------------------------------------------------------
+%	RESEARCH INTERESTS SECTION
+%------------------------------------------------------------------------------
+
+\iffalse
+\begin{rSection}{Research Interests}
+
+  Autonomous robotic systems, systems and controls, healthcare robotics,
+  assistive technology, human-robot interaction, pattern recognition, and
+  machine learning.
+
+\end{rSection}
+\fi
+
+
+
+%------------------------------------------------------------------------------
+%	SUMMARY SECTION
+%------------------------------------------------------------------------------
+
+\iffalse
+\begin{rSection}{Summary}
+
+  %% More than 11 years of experience in algorithm development for autonomous
+  %% robotic systems, software engineering, computer vision, machine learning, and
+  %% human-robot interaction.
+
+\begin{itemize}
+\item More than 11 years of experience in algorithm development for autonomous
+  robotic systems, software engineering, pattern recognition and machine
+  learning, and human-robot interaction.
+\item Extensive experience conducting system field tests and user studies,
+  including experiment design and data analysis.
+\end{itemize}
+
+\end{rSection}
+\fi
+
+
+
+%------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%------------------------------------------------------------------------------
+
+\sectionspace
+\begin{rSection}{Education}
+
+{\bf Georgia Institute of Technology} \hfill {\bf Atlanta, GA} \\
+\textit{Ph.D. in Electrical and Computer Engineering} \hfill May 2017 \\
+Dissertation: \textit{Coupling of an Objective and Quantifiable Methodology for Assessing Upper-body Movements with VR Gaming Platforms}
+
+{\bf Georgia Institute of Technology} \hfill {\bf Atlanta, GA} \\
+\textit{MS in Electrical and Computer Engineering} \hfill May 2014 \\
+Minor: \textit{Computer Science}
+
+{\bf University of Puerto Rico at Mayag\"{u}ez} \hfill {\bf Mayag\"{u}ez, PR} \\
+\textit{BS in Electrical Engineering} \hfill June 2011
+
+\end{rSection}
+
+
+
+
+%------------------------------------------------------------------------------
+%	SKILLS SECTION
+%------------------------------------------------------------------------------
+
+\sectionspace
+\begin{rSection}{Skills}
+
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Programming Languages & Python, C, C++, C\#, Java, Matlab \\
+
+Software Frameworks  & ROS \& ROS 2, TensorFlow, PyTorch, YoloV5, CVAT, FiftyOne \\
+
+% Engineering Software & PSpice, Eclipse, Visual Studio, Simulink, LabView \\
+
+% Operating Systems & Linux, Windows \\
+
+Tools & Docker, CMake, Git, Cygwin, Bash, \LaTeX, Emacs \\
+
+Robotic Platforms & Universal Robots Arms, Dingo, DARwin-OP, Pioneer 3-AT \\
+& BlueEagle, DJI S1000 \\ % AmigoBot
+
+Languages & Fully proficient in English and Spanish. (Basic knowledge in German).
+
+\end{tabular}
+
+\end{rSection}
+
+
+
+
+%------------------------------------------------------------------------------
+%	RESEARCH EXPERIENCE SECTION
+%------------------------------------------------------------------------------
+
+\sectionspace
+\begin{rSection}{Work Experience}
+%------------------------------------------------
+
+\begin{rSubsection}{CTO \& Co-founder}{October 2020 - present}{RIF Robotics $\vert$ Atlanta, GA}{}
+
+\item
+\begin{itemize}
+\item Developing a system to autonomously inspect surgical instruments and
+  assemble surgical trays to help hospitals reduce patient infections and
+  operating room delays with robotics, artificial intelligence, and predictive
+  analytics.
+
+\item Responsible for technical development, fundraising, proposal writing, and
+  customer interfacing.
+\end{itemize}
+
+\end{rSubsection}
+
+%------------------------------------------------
+
+\begin{rSubsection}{Robotics Consultant}{February 2021 - October 2022}{Greenzie $\vert$ Atlanta, GA}{}
+
+\item
+\begin{itemize}
+\item Provided freelance consulting services to the development team towards
+  enhancing the autonomy architecture software of their autonomous lawnmowers.
+
+\item Tasks included: improved pipeline for obstacle detection and avoidance,
+  improved navigation solutions, and research updating autonomy architecture
+  from ROS to ROS 2.
+\end{itemize}
+
+\end{rSubsection}
+
+%------------------------------------------------
+
+\begin{rSubsection}{Research Engineer II}{January 2017 - October 2020}{Georgia Tech Research Institute $\vert$ Atlanta, GA}{Supervisor: Dr. Charles Pippin}
+
+\item
+\begin{itemize}
+\item Developed algorithms for collaborative autonomous systems including, but
+  not limited to, task allocation, path planning, and computer vision.
+
+\item Helped develop the lab’s autonomy architecture software and build system.
+
+\item Responsibilities included software and algorithm development, field
+  testing autonomous systems, proposal creation, technical reporting, customer
+  interfacing, and project management.
+
+\end{itemize}
+
+\end{rSubsection}
+
+%------------------------------------------------
+
+\begin{rSubsection}{Graduate Research Assistant}{May 2012 - December 2016}{Georgia Tech HumAnS Lab $\vert$ Atlanta, GA}{Supervisor: Dr. Ayanna M. Howard}
+
+\item
+\begin{itemize}
+\item Developed an interactive virtual reality gaming system for rehabilitation
+  in the home environment.
+
+\item Developed an objective and quantifiable methodology for evaluating the
+  kinematic performance of individuals who have some form of motor skills
+  disorder.
+
+\item Developed a pattern recognition algorithm to determine the level of the
+  user's kinematic performance such that the virtual reality platform can
+  autonomously adapt to the user's needs.
+
+\end{itemize}
+
+\end{rSubsection}
+
+%------------------------------------------------
+
+\iffalse
+\begin{rSubsection}{Graduate Research Assistant}{August 2011 - May 2012}{Georgia Tech MRL Lab $\vert$ Atlanta, GA}{Supervisor: Dr. Ronald C. Arkin}
+
+\item
+\begin{itemize}
+
+\item Implemented the architecture and support for knowledge sharing across
+  heterogeneous robotic agents as part of the MAST (Micro Autonomous Systems
+  Technology) project.
+
+\item Designed the conceptual spaces for the different robotic platforms based
+  on their respective sensors as a base for the communication and interpretation
+  of the acquired data (i.e. vision, laser range finder, thermal, etc).
+
+\end{itemize}
+
+\end{rSubsection}
+\fi
+
+
+%------------------------------------------------
+\end{rSection}
+
+
+
+
+
+%------------------------------------------------------------------------------
+%	PUBLICATIONS SECTION
+%------------------------------------------------------------------------------
+
+\sectionspace
+% \begin{rSection}{Publications and Presentations}
+\begin{rSection}{Selected Publications}
+
+%------------------------------------------------
+% JOURNALS and BOOK CHAPTERS
+\begin{rSubsection}{Journal Publications and Book Chapters}{}{}{}
+\item
+\begin{enumerate}
+
+\item Y.P. Chen, \Sergio, and A.M. Howard, ``Effect of feedback from a socially
+  interactive humanoid robot on reaching kinematics in children with and without
+  cerebral palsy: a pilot study,'' \textit{Developmental Neurorehabilitation},
+  Vol. 21, No. 8, pp. 490-496, 2018.
+
+%% \item Y.P. Chen, \Sergio, and A.M. Howard, ``Effect of a Home-Based Virtual
+%%   Reality Intervention for Children with Cerebral Palsy using \SuperPop
+%%   Evaluation Metrics: A Feasibility Study,'' \textit{Rehabilitation Research and
+%%     Practice}, 2015.
+
+\item \Sergio, L. Brown, H.W. Park, and A.M. Howard, ``Engaging children in play
+  therapy: The coupling of virtual reality games with social robotics,''
+  \textit{Technologies of Inclusive Well-Being}, Springer Berlin Heildelberg,
+  pp. 139-163, 2014.
+\end{enumerate}
+\end{rSubsection}
+
+
+
+\sectionspace
+%------------------------------------------------
+% REFEREED CONFERENCE PUBLICATIONS
+
+\begin{rSubsection}{Refereed Conference Publications}{}{}{}
+\item
+\begin{enumerate}
+
+\item \Sergio, L. Brown, Y.P. Chen, and A.M. Howard, ``Increasing the Efficacy
+  of Rehabilitation Protocols for Children via a Robotic Playmate Providing
+  Real-time Corrective Feedback,'' \textit{IEEE Conference on Robot and Human
+    Interactive Communication (Ro-Man)}, pp. 700-705, 2016.
+
+\item \Sergio, M.M. Serrano, Y.P. Chen, and A.M. Howard, ``Developing a Baseline
+  for Upper-body Motor Skill Assessment Using a Robotic Kinematic Model,''
+  \textit{IEEE Conference on Robot and Human Interactive Communication
+    (Ro-Man)}, pp. 911-916, 2014.
+
+% \item R.C. Arkin, \Sergio, and S.G. Lee, ``Architectural Design and Support for
+%   Knowledge Sharing Across Heterogeneous MAST systems,'' \textit{SPIE
+%     Conference}, pp. 84070C, 2012.
+
+\end{enumerate}
+\end{rSubsection}
+
+
+%------------------------------------------------
+\end{rSection}
+
+
+
+
+
+
+
+
+%------------------------------------------------------------------------------
+%	PATENTS SECTION
+%------------------------------------------------------------------------------
+
+
+\sectionspace
+
+\begin{rSection}{Patents}
+%------------------------------------------------
+
+% PATENTS
+\begin{rSubsection}{Patents}{}{}{}
+\item
+\begin{enumerate}
+\item R.E. Torres-Mu\~{n}iz, \textbf{S.E. Garc\'{i}a-Vergara},
+  B.A. Llorens-Bonilla, D. S\'{a}nchez-Cordero, and M. Lizama, ``Switch-Actuated
+  Joystick for Power Wheelchairs'', U.S. Patent 8 622 166 B1, January 7, 2014.
+\end{enumerate}
+
+Developed a switch-actuated adapter for joystick controlled wheelchairs such
+that individuals with limited mobility can continue making use of their chairs
+and avoid spending money on new ones.
+
+\end{rSubsection}
+%------------------------------------------------
+\end{rSection}
+
+
+
+
+
+
+%------------------------------------------------------------------------------
+%	REFERENCES SECTION
+%------------------------------------------------------------------------------
+
+\iffalse
+\sectionspace
+\begin{rSection}{References}
+Available upon request.
+\end{rSection}
+\fi
+
+
+%------------------------------------------------------------------------------
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
