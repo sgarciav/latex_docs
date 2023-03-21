@@ -1,0 +1,136 @@
+\documentclass{llncs}
+\usepackage{geometry}
+\geometry{
+  a4paper,         % or letterpaper
+  textwidth=16cm,  % llncs has 12.2cm
+  textheight=24cm, % llncs has 19.3cm
+  heightrounded,   % integer number of lines
+  hratio=1:1,      % horizontally centered
+  vratio=2:3,      % not vertically centered
+}
+
+\renewcommand\labelitemi{*}
+
+% Packages
+% ------------------
+\usepackage{tkz-euclide}
+\usepackage{tikz} % for drawing diagrams
+\usepackage{bm} % bold mode
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{hyperref}
+%% \usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+%% \usepackage{amsthm}
+\usepackage{color}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{dsfont}
+\usepackage{forest}
+
+% setup style of tikzlibrary elements
+% ------------------------------------
+\usetikzlibrary{arrows}
+\usetikzlibrary{quotes,angles}
+\usetikzlibrary{positioning}
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{block} = [rectangle, minimum width=2.5cm, minimum height=1cm, text centered, text width=2.7cm, draw=black, fill=white]
+\tikzstyle{redblock} = [rectangle, thick, minimum width=2.5cm, minimum height=1cm, text centered, text width=2.7cm, draw=red, fill=white]
+\tikzstyle{wideblock} = [rectangle, minimum width=2.5cm, minimum height=1cm, text centered, text width=5cm, draw=black, fill=white]
+\tikzstyle{tallblock} = [rectangle, minimum width=1.9cm, minimum height=2cm, text centered, text width=1.9cm, draw=black, fill=white]
+\tikzstyle{inputblock} = [rectangle, minimum width=1.7cm, minimum height=5cm, text centered, text width=1.7cm, draw=black, fill=white]
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white]
+\tikzstyle{startstop_wide} = [rectangle, rounded corners, minimum width=6cm, minimum height=1cm, text centered, draw=black, fill=white]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white]
+\tikzstyle{process} = [rectangle, minimum width=4cm, minimum height=1cm, text centered, text width=4cm, draw=black, fill=white]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white]
+\tikzstyle{arrow} = [->,>=stealth] % can add "thick" to make it bold
+\tikzset{radiation/.style={{decorate,decoration={expanding waves,angle=90,segment length=4pt}}}}
+
+%% new commands
+% ------------------
+\newcommand{\norm}[1]{\lVert#1\rVert} \newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\fixme}{\textcolor{red}{\textbf{fix me}} \space}
+\newcommand{\attention}[1]{\noindent \fixme \textcolor{red}{#1}}
+
+\definecolor{light-gray}{gray}{0.95}
+\newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
+
+
+
+\begin{document}
+
+
+% Bibliography variables
+% -----------------------
+\bibliographystyle{ieeetr}
+
+
+% Header of paper
+% ---------------------
+\title{WCAG Compliance Guide for \LaTeX Docs }
+
+\author{Sergio Garc\'{i}a-Vergara}
+
+\institute{\email{sergiodotgarcia@gmail.com}}
+
+\maketitle
+
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+% Abstract
+% ---------------------
+\begin{abstract}
+  This document details the steps for teachers to make their \LaTeX documents
+  WCAG complient.
+
+% \begin{keywords}
+%   one $\cdot$ two
+% \end{keywords}
+
+\end{abstract}
+
+
+% @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+\section{Definitions}
+% ---------------------------
+
+Let's first see if a screenreader can read this. Let's include a link to
+\href{www.sergiogarciavergara.com}{my website}. Also, this is the Google URL:
+\url{wwww.google.com}.
+
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+\section{Equations}
+% ---------------------------
+
+The following is a math equation:
+
+\begin{equation}
+  y = \frac{1 + \sqrt{5}}{2}
+\end{equation}
+
+
+
+% @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+
+% -----------------------------
+%% \bibliography{references}
+
+
+% -----------------------------
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
