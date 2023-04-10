@@ -10,3 +10,13 @@ build/
 *.toc
 *.vrb
 *.snm
+
+# extensions from htlatex
+*.4tc
+*.dvi
+*.tmp
+*.xref
+*.4ct
+*.css
+*.idv
+*.lg

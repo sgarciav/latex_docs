@@ -1,0 +1,55 @@
+\documentclass{llncs}
+
+\usepackage{subfig}
+\usepackage{graphicx}
+
+\begin{document}
+
+% Header of paper
+% ---------------------
+\title{WCAG Compliance Guide for \LaTeX Docs }
+
+\author{Sergio Garc\'{i}a-Vergara}
+
+\institute{\email{sergiodotgarcia@gmail.com}}
+
+\maketitle
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+\section{First Section}
+% ---------------------------
+
+This is a regular paragraph. Nothing fancy.
+
+Items to add for testing:
+
+\begin{enumerate}
+  \item An image
+  \item Some math equations
+  \item More subsections
+  \item A table or two
+\end{enumerate}
+
+
+\subsection{Testing Images}
+
+The following is a regular image:
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[scale=1]{figs/Cayey.jpeg}
+\end{center}
+  \caption{This is one of the municipalities in Puerto Rico.}
+\label{fig:cayey}
+\end{figure}
+
+
+% -----------------------------
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
