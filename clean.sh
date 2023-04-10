@@ -9,6 +9,10 @@ find . -name "*.aux" -o -name "*.log" -o \
      -name "*.toc" -o \
      -name "*.vrb" -o \
      -name "*.snm" -o \
+     -name "*.4tc" -o \
+     -name "*.dvi" -o \
+     -name "*.tmp" -o \
+     -name "*.xref" -o \
      -name "#*" -o \
      -name ".#*" -o \
      -name "_region_.tex" -o \
