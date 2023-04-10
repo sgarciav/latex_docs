@@ -1,0 +1,45 @@
+\documentclass{llncs}
+\usepackage{tagpdf}
+\tagpdfsetup{activate-all=true}
+
+\begin{document}
+
+% % Header of paper
+% % ---------------------
+% \title{WCAG Compliance Guide for \LaTeX Docs }
+
+% \author{Sergio Garc\'{i}a-Vergara}
+
+% \institute{\email{sergiodotgarcia@gmail.com}}
+
+% \maketitle
+
+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+\tagstructbegin{tag=Document}
+  \tagstructbegin{tag=Part}
+    \tagstructbegin{tag=Section}
+      \tagstructbegin{tag=H1}
+        \tagmcbegin{tag=H1}
+          Hello, World!
+        \tagmcend
+      \tagstructend
+      This is a simple example of a document using the \texttt{tagpdf} package.
+    \tagstructend
+  \tagstructend
+\tagstructend
+
+\begin{enumerate}
+  \item First item
+  \item Second item
+  \item Third item
+\end{enumerate}
+
+
+% -----------------------------
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
