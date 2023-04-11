@@ -13,59 +13,27 @@
 
 % Packages
 % ------------------
-\usepackage{tkz-euclide}
-\usepackage{tikz} % for drawing diagrams
 \usepackage{bm} % bold mode
 \usepackage{subfig}
 \usepackage{graphicx}
 \usepackage{hyperref}
-%% \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsmath}
-%% \usepackage{amsthm}
 \usepackage{color}
-\usepackage{algorithm}
-\usepackage{algpseudocode}
 \usepackage{dsfont}
-\usepackage{forest}
-
-% setup style of tikzlibrary elements
-% ------------------------------------
-\usetikzlibrary{arrows}
-\usetikzlibrary{quotes,angles}
-\usetikzlibrary{positioning}
-\usetikzlibrary{plotmarks}
-\usetikzlibrary{shapes.geometric, arrows}
-\tikzstyle{block} = [rectangle, minimum width=2.5cm, minimum height=1cm, text centered, text width=2.7cm, draw=black, fill=white]
-\tikzstyle{redblock} = [rectangle, thick, minimum width=2.5cm, minimum height=1cm, text centered, text width=2.7cm, draw=red, fill=white]
-\tikzstyle{wideblock} = [rectangle, minimum width=2.5cm, minimum height=1cm, text centered, text width=5cm, draw=black, fill=white]
-\tikzstyle{tallblock} = [rectangle, minimum width=1.9cm, minimum height=2cm, text centered, text width=1.9cm, draw=black, fill=white]
-\tikzstyle{inputblock} = [rectangle, minimum width=1.7cm, minimum height=5cm, text centered, text width=1.7cm, draw=black, fill=white]
-\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white]
-\tikzstyle{startstop_wide} = [rectangle, rounded corners, minimum width=6cm, minimum height=1cm, text centered, draw=black, fill=white]
-\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white]
-\tikzstyle{process} = [rectangle, minimum width=4cm, minimum height=1cm, text centered, text width=4cm, draw=black, fill=white]
-\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white]
-\tikzstyle{arrow} = [->,>=stealth] % can add "thick" to make it bold
-\tikzset{radiation/.style={{decorate,decoration={expanding waves,angle=90,segment length=4pt}}}}
 
 %% new commands
 % ------------------
-\newcommand{\norm}[1]{\lVert#1\rVert} \newcommand{\abs}[1]{\left|#1\right|}
-\newcommand{\fixme}{\textcolor{red}{\textbf{fix me}} \space}
-\newcommand{\attention}[1]{\noindent \fixme \textcolor{red}{#1}}
-
 \definecolor{light-gray}{gray}{0.95}
 \newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
-
 
 
 \begin{document}
 
 
-% Bibliography variables
-% -----------------------
-\bibliographystyle{ieeetr}
+% % Bibliography variables
+% % -----------------------
+% \bibliographystyle{ieeetr}
 
 
 % Header of paper
@@ -85,8 +53,10 @@
 % Abstract
 % ---------------------
 \begin{abstract}
-  This document details the steps for teachers to make their \LaTeX documents
-  WCAG complient.
+  This document details the steps for generating \LaTeX documents to be WCAG
+  compliant. The goal is for screenreaders to accurately handle the compiled
+  documents. Namely, this means reading the document in order, and handling the
+  math equations and section headings accurately.
 
 % \begin{keywords}
 %   one $\cdot$ two
@@ -97,18 +67,100 @@
 
 % @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-\section{Definitions}
+\section{Introduction}
 % ---------------------------
 
-Let's first see if a screenreader can read this. Let's include a link to
-\href{www.sergiogarciavergara.com}{my website}. Also, this is the Google URL:
-\url{wwww.google.com}.
+Web Content Accessibility Guidelines (WCAG) are a set of recommendations for
+making Web content more accessible. For a document to be considered to be WCAG
+compliant, the following need
+
+\begin{itemize}
+\item \textbf{Use semantic markup}: Make sure to use semantic markup in your
+  \LaTeX document. This means using the appropriate \LaTeX commands for
+  headings, lists, tables, and other elements. This will help screen readers and
+  other assistive technologies to understand the structure of the document.
+
+\item \textbf{Provide alternative text for images}: Use the
+  \textit{includegraphics} command to include images in your \LaTeX document,
+  and provide alternative text for each image using the alt parameter. The
+  alternative text should describe the content or function of the image.
+
+\item \textbf{Use accessible colors}: Choose colors that have sufficient
+  contrast for people with color vision deficiencies. You can use online tools
+  such as the WebAIM Contrast Checker to check the contrast ratio of your color
+  combinations.
+
+\item \textbf{Use appropriate font sizes}: Use a minimum font size of 12pt for
+  body text, and larger sizes for headings and other important elements. This
+  will ensure that the text is legible for all users.
+
+\item \textbf{Add metadata}: Add metadata to your document, including title,
+  author, and language information. You can do this using the hyperref package
+  in \LaTeX.
+
+% \item Add tags to the PDF: Finally, you can add tags to your PDF document using
+%   the tagpdf package in \LaTeX. This will provide a structured representation of
+%   the document for assistive technologies.
+
+\end{itemize}
 
 
-%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+This guide describes the steps that authors should follow to generate accessible
+documents using \LaTeX. Namely, this guide will walk you through correctly
+handling:
+
+\begin{itemize}
+  \item section and subsection headers
+  \item embedded URLs
+  \item math equations
+  \item figures and images
+  \item tables
+\end{itemize}
 
 
-\section{Equations}
+
+\subsection{tex4t: Command-line Tool}
+% ---------------------------
+
+Overall, while PDF documents can be made WCAG compliant, HTML is often a more
+accessible format for online content. By using the \code{tex4ht} package to
+convert your \LaTeX document to HTML, you can make your content more accessible
+to a wider audience.
+
+% ==================================================
+% TODO: write a few sentences about the tex4ht package
+% ==================================================
+
+% @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+\section{Document-level Instructions}
+% ---------------------------
+
+The following sections describe what authors need to do in their \textit{.tex}
+files such that documents are WCAG compliant. The instructions for generating
+the appropriate HTML files (once the \textit{.tex} file is complete), are
+described in Section \ref{sec:Compiling .tex file to HTML}: \textit{Compiling
+  .tex file to HTML}.
+
+
+\subsection{Images and Figures}
+% ---------------------------
+
+Figure and images included in your document need to be accompanied by
+alternative text.
+
+The following is an example:
+
+\begin{figure}
+  \centering
+  \includegraphics[alt={Alt Text}, width=10cm]{figs/Cayey.jpeg}
+  % \includegraphics[width=10cm]{figs/Cayey.jpeg}
+  \caption{Cayey, PR}
+  \label{fig:earth}
+\end{figure}
+
+
+\subsection{Equations}
 % ---------------------------
 
 The following is a math equation:
@@ -117,6 +169,28 @@ The following is a math equation:
   y = \frac{1 + \sqrt{5}}{2}
 \end{equation}
 
+
+% @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+\section{Compiling .tex file to HTML}
+\label{sec:Compiling .tex file to HTML}
+% ---------------------------
+
+\subsection{Ubuntu}
+% ---------------------------
+
+
+\subsection{Widows}
+% ---------------------------
+
+
+% @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+\section{Other Methods}
+% ---------------------------
+
+As I worked on putting together this guide, I found several tools for
+automatically tagging PDFs
 
 
 % @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
