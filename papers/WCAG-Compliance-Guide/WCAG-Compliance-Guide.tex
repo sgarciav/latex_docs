@@ -1,4 +1,5 @@
-\documentclass{llncs}
+% \documentclass{llncs}
+\documentclass[lang=en]{article}
 \usepackage{geometry}
 \geometry{
   a4paper,         % or letterpaper
@@ -11,40 +12,43 @@
 
 \renewcommand\labelitemi{*}
 
-% Packages
+
+%% Packages
 % ------------------
 % \usepackage{graphicx}
 \usepackage[dvipdfmx]{graphicx} % enable the alt parameter in \includegraphics
 \usepackage{bm} % bold mode
 \usepackage{subfig}
-\usepackage{hyperref}
-% \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{color}
+\usepackage[english]{babel}
+\usepackage{hyperref}
 
-% New Commands
+
+%% New Commands
 % ------------------
 \definecolor{light-gray}{gray}{0.95}
 \newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
 
 
-\begin{document}
-
-
-% % Bibliography variables
-% % -----------------------
-% \bibliographystyle{ieeetr}
-
-
-% Header of paper
+%% Document Header
 % ---------------------
 \title{WCAG Compliance Guide for LaTeX Docs}
-
 \author{Sergio Garc\'{i}a-Vergara}
+\date{\today}
+% \institute{\email{sergiodotgarcia@gmail.com}}
 
-\institute{\email{sergiodotgarcia@gmail.com}}
 
+
+% @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+\begin{document}
 \maketitle
+
+
+% %% Bibliography variables
+% % -----------------------
+% \bibliographystyle{ieeetr}
 
 
 %@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -53,7 +57,7 @@
 % Abstract
 % ---------------------
 \begin{abstract}
-  This document details the steps for generating \LaTeX documents to be WCAG
+  This document details the steps for generating LaTeX documents to be WCAG
   compliant. The goal is for screenreaders to accurately handle the compiled
   documents. Namely, this means reading the document in order, and handling the
   math equations and section headings accurately.
@@ -76,12 +80,12 @@ compliant, the following need
 
 \begin{itemize}
 \item \textbf{Use semantic markup}: Make sure to use semantic markup in your
-  \LaTeX document. This means using the appropriate \LaTeX commands for
+  LaTeX document. This means using the appropriate LaTeX commands for
   headings, lists, tables, and other elements. This will help screen readers and
   other assistive technologies to understand the structure of the document.
 
 \item \textbf{Provide alternative text for images}: Use the
-  \textit{includegraphics} command to include images in your \LaTeX document,
+  \textit{includegraphics} command to include images in your LaTeX document,
   and provide alternative text for each image using the alt parameter. The
   alternative text should describe the content or function of the image.
 
@@ -96,40 +100,27 @@ compliant, the following need
 
 \item \textbf{Add metadata}: Add metadata to your document, including title,
   author, and language information. You can do this using the hyperref package
-  in \LaTeX.
+  in LaTeX.
 
 % \item Add tags to the PDF: Finally, you can add tags to your PDF document using
-%   the tagpdf package in \LaTeX. This will provide a structured representation of
+%   the tagpdf package in LaTeX. This will provide a structured representation of
 %   the document for assistive technologies.
 
 \end{itemize}
 
 
 This guide describes the steps that authors should follow to generate accessible
-documents using \LaTeX. Namely, this guide will walk you through correctly
-handling:
-
-\begin{itemize}
-  \item section and subsection headers
-  \item embedded URLs
-  \item math equations
-  \item figures and images
-  \item tables
-\end{itemize}
-
+documents using LaTeX. Namely, this guide will walk you through correctly
+handling: section and subsection headers, embedded URLs, math equations, figures
+and images, and tables.
 
 
 \subsection{tex4t: Command-line Tool}
 % ---------------------------
 
 Overall, while PDF documents can be made WCAG compliant, HTML is often a more
-accessible format for online content. By using the \code{tex4ht} package to
-convert your \LaTeX document to HTML, you can make your content more accessible
-to a wider audience.
-
-% ==================================================
-% TODO: write a few sentences about the tex4ht package
-% ==================================================
+accessible format for online content. By converting your LaTeX document to
+HTML, you can make your content more accessible to a wider audience.
 
 % @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -165,13 +156,29 @@ Work in progress.
 \subsection{Equations}
 % ---------------------------
 
-This is an inline math equation: $E=mc^2$. The following is an in-paragprah math
-equation:
+The flags used to compile your document to HTML automatically take care of
+correctly rendering your math equations. You just need to make sure that they're
+formatted correctly. \\
+
+This is an example inline math equation: $E=mc^2$. Note the use of the dollar
+sign before and after the equation. \\
+
+The following is an in-paragraph math equation:
 
 \begin{equation}
   \frac{d^2y}{dx^2} + p(x) \frac{dy}{dx} + q(x)y = f(x)
 \end{equation}
 
+Note that there are no dollar signs in this format. The main difference between
+these two use cases is that the in-paragraph structure automatically tags it
+with a number such that it can later be referenced in other parts of the
+document.
+
+
+\subsection{Tables}
+% ---------------------------
+
+Work in progress.
 
 % @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -181,6 +188,20 @@ equation:
 
 \subsection{Ubuntu}
 % ---------------------------
+
+Fist you'll need to install the \code{tex4ht} package by executing the
+following:
+
+  \code{sudo apt update}
+  \code{sudo apt install tex4ht}
+
+Then execute the following command on your Linux terminal to compile the html
+files:
+
+  \code{htlatex mydocument.tex "xhtml,mathml,html5,charset=utf-8" " -cunihtf -utf8"}
+
+Make sure to replace the \textit{myfile.tex} name with the name of your
+document.
 
 
 \subsection{Widows}
