@@ -24,6 +24,7 @@
 \usepackage{hyperref}
 % \usepackage{unicode-math} % remove the table layout for equations
 \usepackage{amsmath}
+\usepackage{caption}
 
 
 %% New Commands
@@ -146,20 +147,21 @@ use of the package at the top of your tex doc: \textbf{usepackage{href}}.
 \subsection{Images and Figures}
 % ---------------------------
 
-Work in progress.
+% Work in progress.
 
-% Figure and images included in your document need to be accompanied by
-% alternative text.
+Figure and images included in your document need to be accompanied by
+alternative text.
 
-% The following is an example:
+The following is an example:
 
-% \begin{figure}
-%   \centering
-%   \includegraphics[width=0.5\textwidth, alt=View of Cayey PR]{figs/Cayey.jpeg}
-%   % \includegraphics[scale=0.75]{figs/Cayey.jpeg}
-%   \caption{Cayey, PR}
-%   \label{fig:cayey}
-% \end{figure}
+\begin{figure}
+  \centering
+  % \includegraphics[width=0.5\textwidth, alt=View of Cayey PR]{figs/Cayey.jpeg}
+  \includegraphics[width=0.5\textwidth]{figs/Cayey.jpeg}
+  \captionsetup{type=figure}
+  \caption[View of Cayey, PR]{View of Cayey, PR}
+  \label{fig:cayey}
+\end{figure}
 
 
 \subsection{Equations}
