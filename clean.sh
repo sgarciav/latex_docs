@@ -18,6 +18,8 @@ find . -name "*.aux" -o -name "*.log" -o \
      -name "*.html" -o \
      -name "*.idv" -o \
      -name "*.lg" -o \
+     -name "*.upa" -o \
+     -name "*.upb" -o \
      -name "#*" -o \
      -name ".#*" -o \
      -name "_region_.tex" -o \
