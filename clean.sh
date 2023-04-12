@@ -15,7 +15,6 @@ find . -name "*.aux" -o -name "*.log" -o \
      -name "*.xref" -o \
      -name "*.4ct" -o \
      -name "*.css" -o \
-     -name "*.html" -o \
      -name "*.idv" -o \
      -name "*.lg" -o \
      -name "*.upa" -o \
