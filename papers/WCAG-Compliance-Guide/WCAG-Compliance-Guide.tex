@@ -19,10 +19,11 @@
 \usepackage[dvipdfmx]{graphicx} % enable the alt parameter in \includegraphics
 \usepackage{bm} % bold mode
 \usepackage{subfig}
-\usepackage{amsmath}
 \usepackage{color}
 \usepackage[english]{babel}
 \usepackage{hyperref}
+% \usepackage{unicode-math} % remove the table layout for equations
+\usepackage{amsmath}
 
 
 %% New Commands
@@ -192,13 +193,13 @@ Work in progress.
 Fist you'll need to install the \code{tex4ht} package by executing the
 following:
 
-  \code{sudo apt update}
-  \code{sudo apt install tex4ht}
+\code{sudo apt update}
+\code{sudo apt install tex4ht}
 
 Then execute the following command on your Linux terminal to compile the html
 files:
 
-  \code{htlatex mydocument.tex "xhtml,mathml,html5,charset=utf-8" " -cunihtf -utf8"}
+\code{htlatex mydocument.tex "xhtml,mathml,html5,charset=utf-8" " -cunihtf -utf8"}
 
 Make sure to replace the \textit{myfile.tex} name with the name of your
 document.
