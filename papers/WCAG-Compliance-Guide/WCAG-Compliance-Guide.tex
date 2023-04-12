@@ -13,16 +13,16 @@
 
 % Packages
 % ------------------
+% \usepackage{graphicx}
+\usepackage[dvipdfmx]{graphicx} % enable the alt parameter in \includegraphics
 \usepackage{bm} % bold mode
 \usepackage{subfig}
-\usepackage{graphicx}
 \usepackage{hyperref}
-\usepackage{amssymb}
+% \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{color}
-\usepackage{dsfont}
 
-%% new commands
+% New Commands
 % ------------------
 \definecolor{light-gray}{gray}{0.95}
 \newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
@@ -38,7 +38,7 @@
 
 % Header of paper
 % ---------------------
-\title{WCAG Compliance Guide for \LaTeX Docs }
+\title{WCAG Compliance Guide for LaTeX Docs}
 
 \author{Sergio Garc\'{i}a-Vergara}
 
@@ -146,27 +146,30 @@ described in Section \ref{sec:Compiling .tex file to HTML}: \textit{Compiling
 \subsection{Images and Figures}
 % ---------------------------
 
-Figure and images included in your document need to be accompanied by
-alternative text.
+Work in progress.
 
-The following is an example:
+% Figure and images included in your document need to be accompanied by
+% alternative text.
 
-\begin{figure}
-  \centering
-  \includegraphics[alt={Alt Text}, width=10cm]{figs/Cayey.jpeg}
-  % \includegraphics[width=10cm]{figs/Cayey.jpeg}
-  \caption{Cayey, PR}
-  \label{fig:earth}
-\end{figure}
+% The following is an example:
+
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=0.5\textwidth, alt=View of Cayey PR]{figs/Cayey.jpeg}
+%   % \includegraphics[scale=0.75]{figs/Cayey.jpeg}
+%   \caption{Cayey, PR}
+%   \label{fig:cayey}
+% \end{figure}
 
 
 \subsection{Equations}
 % ---------------------------
 
-The following is a math equation:
+This is an inline math equation: $E=mc^2$. The following is an in-paragprah math
+equation:
 
 \begin{equation}
-  y = \frac{1 + \sqrt{5}}{2}
+  \frac{d^2y}{dx^2} + p(x) \frac{dy}{dx} + q(x)y = f(x)
 \end{equation}
 
 
@@ -183,6 +186,7 @@ The following is a math equation:
 \subsection{Widows}
 % ---------------------------
 
+Work in progress.
 
 % @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" 
+"http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd" > 
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>WCAG Compliance Guide for LaTeX Docs</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<!-- xhtml,mathml,html --> 
+<meta name="src" content="WCAG-Compliance-Guide.tex" /> 
+<link rel="stylesheet" type="text/css" href="WCAG-Compliance-Guide.css" /> 
+</head><body 
+>
+   <div class="maketitle">
+                                                                                       
+                                                                                       
+   <a 
+ id="likesection.1"></a><a 
+ id="x1-2r1"></a>
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+
+<h2 class="titleHead">WCAG Compliance Guide for LaTeX Docs</h2>
+<div class="author" >Sergio García-Vergara</div>
+<div class="institute"><span class="email"><span 
+class="cmtt-9">sergiodotgarcia@gmail.com</span></span></div>
+<a 
+ id="Q1-1-1"></a>
+<a 
+ id="Q1-1-2"></a>
+   </div>
+   <div 
+class="abstract" 
+>
+     <span 
+class="cmbx-9">Abstract.</span> <span 
+class="cmr-9">This  document  details  the  steps  for  generating  LaTeXdocuments  to  be  WCAG</span>
+     <span 
+class="cmr-9">compliant. The goal is for screenreaders to accurately handle the compiled documents. Namely,</span>
+     <span 
+class="cmr-9">this means reading the document in order, and handling the math equations and section headings</span>
+     <span 
+class="cmr-9">accurately.</span>
+</div>
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>Introduction</h3>
+<!--l. 78--><p class="noindent" >Web Content Accessibility Guidelines (WCAG) are a set of recommendations for making Web content more
+accessible. For a document to be considered to be WCAG compliant, the following need
+</p>
+   <ul class="itemize1">
+   <li class="itemize"><span 
+class="cmbx-10">Use semantic markup</span>: Make sure to use semantic markup in your LaTeXdocument. This means
+   using the appropriate LaTeXcommands for headings, lists, tables, and other elements. This will help
+   screen readers and other assistive technologies to understand the structure of the document.
+   </li>
+   <li class="itemize"><span 
+class="cmbx-10">Provide alternative text for images</span>: Use the <span 
+class="cmti-10">includegraphics </span>command to include images in your
+   LaTeXdocument, and provide alternative text for each image using the alt parameter. The alternative
+   text should describe the content or function of the image.
+   </li>
+   <li class="itemize"><span 
+class="cmbx-10">Use accessible colors</span>: Choose colors that have sufficient contrast for people with color vision
+   deficiencies. You can use online tools such as the WebAIM Contrast Checker to check the contrast
+   ratio of your color combinations.
+   </li>
+   <li class="itemize"><span 
+class="cmbx-10">Use appropriate font sizes</span>: Use a minimum font size of 12pt for body text, and larger sizes for
+   headings and other important elements. This will ensure that the text is legible for all users.
+   </li>
+   <li class="itemize"><span 
+class="cmbx-10">Add metadata</span>: Add metadata to your document, including title, author, and language information.
+   You can do this using the hyperref package in LaTeX.
+   </li></ul>
+<!--l. 113--><p class="indent" >   This guide describes the steps that authors should follow to generate accessible documents using LaTeX.
+Namely, this guide will walk you through correctly handling:
+</p>
+   <ul class="itemize1">
+   <li class="itemize">section and subsection headers
+                                                                                       
+                                                                                       
+   </li>
+   <li class="itemize">embedded URLs
+   </li>
+   <li class="itemize">math equations
+   </li>
+   <li class="itemize">figures and images
+   </li>
+   <li class="itemize">tables</li></ul>
+<!--l. 127--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">1.1   </span> <a 
+ id="x1-20001.1"></a>tex4t: Command-line Tool</h4>
+<!--l. 130--><p class="noindent" >Overall, while PDF documents can be made WCAG compliant, HTML is often a more accessible format for
+online content. By using the <span 
+class="colorbox" id="colorbox1"><span 
+class="cmtt-10">tex4ht</span></span> package to convert your LaTeXdocument to HTML, you can make your
+content more accessible to a wider audience.
+</p><!--l. 141--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-30002"></a>Document-level Instructions</h3>
+<!--l. 144--><p class="noindent" >The following sections describe what authors need to do in their <span 
+class="cmti-10">.tex </span>files such that documents are WCAG
+compliant. The instructions for generating the appropriate HTML files (once the <span 
+class="cmti-10">.tex </span>file is complete), are
+described in Section <a 
+href="#x1-60003">3<!--tex4ht:ref: sec:Compiling .tex file to HTML --></a>: <span 
+class="cmti-10">Compiling .tex file to HTML</span>.
+</p><!--l. 151--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">2.1   </span> <a 
+ id="x1-40002.1"></a>Images and Figures</h4>
+<!--l. 154--><p class="noindent" >Work in progress.
+</p><!--l. 170--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">2.2   </span> <a 
+ id="x1-50002.2"></a>Equations</h4>
+<!--l. 173--><p class="noindent" >This is an inline math equation: <!--l. 173--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>E</mi> <mo 
+class="MathClass-rel">=</mo> <mi 
+>m</mi><msup><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>2</mn></mrow></msup 
+></math>.
+The following is an in-paragprah math equation:
+</p>
+   <table class="equation"><tr><td> <a 
+ id="x1-5001r1"></a>
+<!--l. 176--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                               <mfrac><mrow 
+><msup><mrow 
+><mi 
+>d</mi></mrow><mrow 
+><mn>2</mn></mrow></msup 
+><mi 
+>y</mi></mrow>
+<mrow 
+><mi 
+>d</mi><msup><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>2</mn></mrow></msup 
+></mrow></mfrac> <mo 
+class="MathClass-bin">+</mo> <mi 
+>p</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow><mfrac><mrow 
+><mi 
+>d</mi><mi 
+>y</mi></mrow>
+<mrow 
+><mi 
+>d</mi><mi 
+>x</mi></mrow></mfrac> <mo 
+class="MathClass-bin">+</mo> <mi 
+>q</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow><mi 
+>y</mi> <mo 
+class="MathClass-rel">=</mo> <mi 
+>f</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow>
+</math></td><td class="eq-no">(1)</td></tr></table>
+                                                                                       
+                                                                                       
+<!--l. 183--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-60003"></a>Compiling .tex file to HTML</h3>
+<!--l. 187--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">3.1   </span> <a 
+ id="x1-70003.1"></a>Ubuntu</h4>
+<!--l. 191--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">3.2   </span> <a 
+ id="x1-80003.2"></a>Widows</h4>
+<!--l. 197--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+ id="x1-90004"></a>Other Methods</h3>
+<!--l. 200--><p class="noindent" >As I worked on putting together this guide, I found several tools for automatically tagging PDFs
+</p>
+    
+</body></html> 
+
+                                                                                       
+
+
