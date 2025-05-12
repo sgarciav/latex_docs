@@ -69,12 +69,11 @@
 
 % Header of paper
 % ---------------------
-\title{UpWork}
+\title{TikZ Figures}
 
 \author{Sergio Garc\'{i}a-Vergara}
 
-\institute{Personal LLC\\
-  \email{sergiodotgarcia@gmail.com}}
+\institute{\email{sergiodotgarcia@gmail.com}}
 
 \maketitle
 
@@ -96,32 +95,42 @@
 
 % @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-\section{2025.05}
+% \section{2025.05}
 % ---------------------------
 
 \begin{figure}[h]
 \begin{center}
 \begin{tikzpicture}[auto, node distance=2.7cm, >=latex']
 
-  \tikzmath{\y = 30; \x =1;}
-  % comment out
-  \draw[step=1cm,gray,very thin] (0,0) grid (10,\y);
+  \tikzmath{\ymax = 16; \b = 1; \tmax = 11;}
 
-  \draw (0,0) -- (\y-2,0) -- (4,4) -- (0,4) -- (0,0);
+  % % comment out
+  % \draw[step=1cm,gray,very thin] (0,0) grid (10,\ymax);
 
-  % % draw connections between nodes
-  % \draw [arrow] (camera) -- node[anchor=north] {} (block1);
-  % \draw [arrow] (block1) -- node[anchor=north] {Level 1} (level1);
-  % \draw [arrow] (level1) -- node[anchor=east] {Level 2} (redblock);
-  % \draw [arrow] (redblock) -- node[anchor=east] {Level 3} (database);
-  % \draw [<->] (main_box) -- node[anchor=east] {serial commands} (gimbal);
-  % \draw [radiation,decoration={angle=45}] (radio) -- (air);
-  % \draw [<->] (main_box) -- node[anchor=north] {} (radio);
-  % \draw [arrow] (main_box.0) -| ++(-1cm,0) |- node[anchor=south, xshift=0.4cm] {tracks} (level1.0);
+  \draw (1,\b) -- (1,\ymax) -- (2,\ymax) -- (2,\b+1);
+  \draw (1,\b) arc (180 : 270 : 1cm) node[below left]{C};
+  \draw (2,\b+1) arc (180 : 270 : 1cm);
+
+  \draw (2,\b-1) -- (7,\b-1);
+  \draw (7,\b-1) arc (270 : 360 : 1cm);
+
+  \draw (3,\b) -- (6,\b);
+  \draw (6,\b) arc (270 : 360 : 1cm);
+
+  \draw (7,\b+1) -- (7,\b+2) node[above right]{I};
+  \draw (7,\b+2) arc (270 : 180 : 2cm);
+
+  \draw (8,\b) -- (8,\b+2) node[below right]{D};
+  \draw (8,\b+2) arc (270 : 360 : 2cm);
+
+  \draw (5,\b+4) -- (5,\tmax) node[left]{E} -- (10,\tmax) node[right]{F} -- (10,\b+4);
+  \draw (5,7) -- (5,8) node[left]{C} -- (10,8) node[right]{H} -- (10,7) -- (5,7) node[left]{Q};
+  \draw (1,8) node[left]{L} -- (2,8);
+  \draw (1,\ymax-3) node[left]{A} -- (2,\ymax-3) node[right]{B};
 
 \end{tikzpicture}
 \end{center}
- \caption{Duhem-fig4}
+ \caption{Duhem-1905N,fig-4}
 \label{fig:Duhem-fig4}
 \end{figure}
 
