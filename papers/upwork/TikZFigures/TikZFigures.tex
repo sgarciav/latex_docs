@@ -1,4 +1,3 @@
-
 \documentclass{llncs}
 \usepackage{geometry}
 \geometry{
@@ -31,6 +30,8 @@
 
 % setup style of tikzlibrary elements
 % ------------------------------------
+\usetikzlibrary{patterns}
+\usetikzlibrary{patterns.meta}
 \usetikzlibrary{arrows}
 \usetikzlibrary{quotes,angles}
 \usetikzlibrary{positioning}
@@ -91,6 +92,38 @@
 % \end{keywords}
 
 % \end{abstract}
+
+
+% @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+% \section{2025.05}
+% ---------------------------
+
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}[auto, node distance=2.7cm, >=latex']
+
+  \tikzmath{\xmax = 20; \ymax = 7; \width = 2; \bh = 1.5;}
+  \tikzmath{\s2 = \width + 1;}
+
+  % comment out
+  \draw[step=1cm,gray,very thin] (0,0) grid (\xmax,\ymax);
+
+  % Fig 1
+  \draw (0,\ymax) -- (0,0) -- (\width,0) -- (\width,\ymax);
+  \draw (0,\bh) -- (\width,\bh);
+  \draw[pattern={north east lines}] (0,0) rectangle +(\width,\bh);
+
+  % Fig 2
+  \draw (\s2,\ymax) -- (\s2+\width,\bh) -- (\s2+\width,0) -- (\s2+\width*2,0) -- (\s2+\width*2,\bh) -- (\s2+\width,\ymax);
+  \draw[pattern={north east lines}] (\s2+\width,0) rectangle +(\width,\bh);
+
+
+\end{tikzpicture}
+\end{center}
+ \caption{Duhem-1905N,fig-1}
+\label{fig:Duhem-fig1}
+\end{figure}
 
 
 % @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
