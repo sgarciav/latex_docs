@@ -2,7 +2,7 @@
 \usepackage{geometry}
 \geometry{
   a4paper,
-  margin=0.5in
+  margin=0.25in
 }
 
 \renewcommand\labelitemi{*}
@@ -65,8 +65,13 @@
 \begin{center}
 \begin{tikzpicture}[auto, node distance=2.7cm, >=latex']
 
-  \tikzmath{\xmax = 18; \ymax = 7; \width = 2; \bh = 1.5;}
-  \tikzmath{\s2 = \width + 1; \s3 = \width*3 + 2;}
+  \tikzmath{\xmax = 20; \ymax = 7; \width = 2; \bh = 1;}
+  \tikzmath{\cw1 = \width;}
+  \tikzmath{\d = 0.15; \cw2 = \width*0.5 - \d;}
+
+  \tikzmath{\s2 = \width + 1;}
+  \tikzmath{\s3 = \width*3 + 1;}
+  \tikzmath{\s4 = \s3+\cw1*2+\width+2 - \d;}
 
   % comment out
   \draw[step=1cm,gray,very thin] (0,0) grid (\xmax,\ymax);
@@ -77,12 +82,21 @@
   \draw[pattern={north east lines}] (0,0) rectangle +(\width,\bh);
 
   % Fig 2
-  \draw (\s2,\ymax) -- (\s2+\width,\bh) -- (\s2+\width,0) -- (\s2+\width*2,0) -- (\s2+\width*2,\bh) -- (\s2+\width,\ymax);
+  \draw (\s2,\ymax) -- (\s2+\width,\bh*2) -- (\s2+\width,0) -- (\s2+\width*2,0);
+  \draw (\s2+\width*2,0) -- (\s2+\width*2,\bh*2) -- (\s2+\width,\ymax);
   \draw[pattern={north east lines}] (\s2+\width,0) rectangle +(\width,\bh);
 
   % Fig 3
-  \draw (0,\ymax) -- (0,0) -- (\width,0) -- (\width,\ymax);
+  \tikzmath{\cy1 = (\ymax + \bh*2) / 2;}
+  \draw (\s3,\ymax) .. controls (\s3+0.5,\cy1) .. (\s3+\cw1,\bh*2);
+  \draw (\s3+\cw1,\bh*2) -- (\s3+\cw1,0) -- (\s3+\cw1+\width,0) -- (\s3+\cw1+\width,\bh*2);
+  \draw (\s3+\cw1+\width,\bh*2) .. controls (\s3+\cw1+\width+1.5,\cy1) .. (\s3+\cw1*2+\width,\ymax);
+  \draw[pattern={north east lines}] (\s3+\cw1,0) rectangle +(\width,\bh);
 
+  % Fig 4
+  \draw (\s4,\ymax) -- (\s4-\cw2,\bh*2) -- (\s4-\cw2,0) -- (\s4-\cw2+\width,0);
+  \draw (\s4-\cw2+\width,0) -- (\s4-\cw2+\width,\bh*2) -- (\s4+\d*2,\ymax);
+  \draw[pattern={north east lines}] (\s4-\cw2,0) rectangle +(\width,\bh);
 
 \end{tikzpicture}
 \end{center}
