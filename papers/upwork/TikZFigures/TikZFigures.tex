@@ -70,8 +70,9 @@
   \tikzmath{\d = 0.15; \cw2 = \width*0.5 - \d;}
 
   \tikzmath{\s2 = \width + 1;}
-  \tikzmath{\s3 = \width*3 + 1;}
+  \tikzmath{\s3 = \width*3 + 1.5;}
   \tikzmath{\s4 = \s3+\cw1*2+\width+2 - \d;}
+  \tikzmath{\s5 = \s4 + \d + 3;}
 
   % comment out
   \draw[step=1cm,gray,very thin] (0,0) grid (\xmax,\ymax);
@@ -87,16 +88,27 @@
   \draw[pattern={north east lines}] (\s2+\width,0) rectangle +(\width,\bh);
 
   % Fig 3
-  \tikzmath{\cy1 = (\ymax + \bh*2) / 2;}
-  \draw (\s3,\ymax) .. controls (\s3+0.5,\cy1) .. (\s3+\cw1,\bh*2);
+  \tikzmath{\c = 0.7; \cx = 0.1; \cy1 = (\ymax + \bh*2) / 2 - \c;}
+  \draw (\s3,\ymax) .. controls (\s3+0.5-\cx,\cy1) .. (\s3+\cw1,\bh*2);
   \draw (\s3+\cw1,\bh*2) -- (\s3+\cw1,0) -- (\s3+\cw1+\width,0) -- (\s3+\cw1+\width,\bh*2);
-  \draw (\s3+\cw1+\width,\bh*2) .. controls (\s3+\cw1+\width+1.5,\cy1) .. (\s3+\cw1*2+\width,\ymax);
+  \draw (\s3+\cw1+\width,\bh*2) .. controls (\s3+\cw1+\width+1.5+\cx,\cy1) .. (\s3+\cw1*2+\width,\ymax);
   \draw[pattern={north east lines}] (\s3+\cw1,0) rectangle +(\width,\bh);
 
   % Fig 4
-  \draw (\s4,\ymax) -- (\s4-\cw2,\bh*2) -- (\s4-\cw2,0) -- (\s4-\cw2+\width,0);
-  \draw (\s4-\cw2+\width,0) -- (\s4-\cw2+\width,\bh*2) -- (\s4+\d*2,\ymax);
+  \tikzmath{\m = 1.6;}
+  \draw (\s4,\ymax) -- (\s4-\cw2,\bh*\m) -- (\s4-\cw2,0) -- (\s4-\cw2+\width,0);
+  \draw (\s4-\cw2+\width,0) -- (\s4-\cw2+\width,\bh*\m) -- (\s4+\d*2,\ymax);
   \draw[pattern={north east lines}] (\s4-\cw2,0) rectangle +(\width,\bh);
+
+  % Fig 5
+  % \draw(\s5,\ymax) -- (\s5,\bh*2);
+  \draw (\s5-1,\bh) arc (180 : 90 : 0.8cm);
+  \draw (\s5-1,\bh) -- (\s5-1,0) -- (\s5-1+\width,0) -- (\s5-1+\width,\bh);
+  \draw (\s5-1+\width,\bh) arc (0 : 90 : 0.8cm);
+  \draw(\s5-1+0.8,\ymax) -- (\s5-1+0.8,\bh*1.8);
+  \draw(\s5-1+1.2,\ymax) -- (\s5-1+1.2,\bh*1.8);
+  \draw[pattern={north east lines}] (\s5-1,0) rectangle +(\width,\bh);
+
 
 \end{tikzpicture}
 \end{center}
@@ -145,8 +157,6 @@
  \caption{Duhem-1905N,fig-4}
 \label{fig:Duhem-fig4}
 \end{figure}
-
-\newpage
 
 
 % @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
