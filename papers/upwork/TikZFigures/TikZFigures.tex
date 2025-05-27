@@ -236,11 +236,11 @@
   \tikzmath{\o = 3.2; \e = \o + \w3;}
   \tikzmath{\width = \w1 + \w2 + \w3;}
 
-  \draw[very thick] (\w1+\w2,\e) rectangle +(\w3,\ymax-\e);
-  \draw[very thick] (\w1+\w2,\o) rectangle +(\w3,\w3);
+  \draw[very thick] (\w1+\w2,\e) rectangle +(\w3,\ymax-\e) node[right]{\LARGE A};
+  \draw[very thick] (\w1+\w2,\o) rectangle +(\w3,\w3) node[right]{\LARGE E};
   \draw[pattern={north east lines}] (\w1+\w2,\o) rectangle +(\w3,\w3);
 
-  \draw[very thick] (0,\ymax) -- (0,0) -- (\w1+\w2+\w3,0) -- (\w1+\w2+\w3,\o) -- (\w1+\w2,\o) -- (\w1+\w2,\bh) -- (\w1,\bh) -- (\w1,\ymax);
+  \draw[very thick] (0,\ymax) node[left]{\LARGE F} -- (0,0) -- (\w1+\w2+\w3,0) node[right]{\LARGE U} -- (\w1+\w2+\w3,\o) node[right]{\LARGE O} -- (\w1+\w2,\o) -- (\w1+\w2,\bh) -- (\w1,\bh) -- (\w1,\ymax);
 
   \clip (0,\ymax) -- (0,0) -- (\w1+\w2+\w3,0) -- (\w1+\w2+\w3,\o) -- (\w1+\w2,\o) -- (\w1+\w2,\bh) -- (\w1,\bh) -- (\w1,\ymax);
 
