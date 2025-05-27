@@ -224,10 +224,40 @@
 \label{fig:Duhem-fig2}
 \end{figure}
 
+
 % @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-% \section{2025.05}
-% ---------------------------
+
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}[auto, node distance=2.7cm, >=latex']
+
+  \tikzmath{\ymax = 7.8; \w1 = 0.8; \w2 = 3.8; \w3 = 2; \bh = 0.7;}
+  \tikzmath{\o = 3.2; \e = \o + \w3;}
+  \tikzmath{\width = \w1 + \w2 + \w3;}
+
+  \draw[very thick] (\w1+\w2,\e) rectangle +(\w3,\ymax-\e);
+  \draw[very thick] (\w1+\w2,\o) rectangle +(\w3,\w3);
+  \draw[pattern={north east lines}] (\w1+\w2,\o) rectangle +(\w3,\w3);
+
+  \draw[very thick] (0,\ymax) -- (0,0) -- (\w1+\w2+\w3,0) -- (\w1+\w2+\w3,\o) -- (\w1+\w2,\o) -- (\w1+\w2,\bh) -- (\w1,\bh) -- (\w1,\ymax);
+
+  \clip (0,\ymax) -- (0,0) -- (\w1+\w2+\w3,0) -- (\w1+\w2+\w3,\o) -- (\w1+\w2,\o) -- (\w1+\w2,\bh) -- (\w1,\bh) -- (\w1,\ymax);
+
+  \foreach \y in {0, 0.3, ..., \ymax} {
+    \draw[thick]
+    plot[domain=0:\width, smooth, samples=50]
+    (\x, {sin(3*\x r + \y*5 r)*0.1 + \y});
+  }
+
+\end{tikzpicture}
+\end{center}
+ \caption{Duhem-1905N,fig-3}
+\label{fig:Duhem-fig3}
+\end{figure}
+
+% @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
 
 \begin{figure}[h]
 \begin{center}
