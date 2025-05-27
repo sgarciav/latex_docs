@@ -81,9 +81,7 @@
 \begin{center}
 \begin{tikzpicture}[auto, node distance=2.7cm, >=latex']
 
-  \tikzmath{\xmax = 20; \ymax = 7; \width = 2; \bh = 1;}
-  \tikzmath{\cw1 = \width;}
-  \tikzmath{\d = 0.15; \cw2 = \width*0.5 - \d;}
+  % \tikzmath{\d = 0.15; \cw2 = \width*0.5 - \d;}
 
   % \tikzmath{\s2 = \width + 1;}
   % \tikzmath{\s3 = \width*3 + 1.5;}
@@ -91,12 +89,12 @@
   % \tikzmath{\s5 = \s4 + \d + 3;}
 
   % % comment out
-  % \draw[step=1cm,gray,very thin] (0,0) grid (\xmax,\ymax);
+  % \draw[step=1cm,gray,very thin] (0,0) grid (20,\ymax);
+
+  \tikzmath{\ymax = 7; \bh = 1; \width = 2;}
 
   % Fig 1
   \begin{scope}
-    \tikzmath{\width = 2; \bh = 1;}
-
     \draw[very thick] (0,0) rectangle +(\width,\bh);
     \draw[pattern={north east lines}] (0,0) rectangle +(\width,\bh);
 
@@ -112,27 +110,35 @@
 
   % Fig 2
   \begin{scope}[xshift=3cm]
-    \tikzmath{\width = 2; \bh = 1;}
-
     \draw[very thick] (\width,0) rectangle +(\width,\bh);
     \draw[pattern={north east lines}] (\width,0) rectangle +(\width,\bh);
 
     \draw[very thick] (0,\ymax) -- (\width,\bh*2) -- (\width,\bh) -- (\width*2,\bh) -- (\width*2,\bh*2) -- (\width,\ymax);
     \clip (0,\ymax) -- (\width,\bh*2) -- (\width,\bh) -- (\width*2,\bh) -- (\width*2,\bh*2) -- (\width,\ymax);
 
-    \foreach \y in {0, 0.3, ..., 6} {
+    \foreach \y in {0, 0.3, ..., \ymax} {
       \draw[thick]
       plot[domain=0:\width*2, smooth, samples=50]
       (\x, {1+sin(3*(\x) r + \y*5 r)*0.1 + \y});
     }
   \end{scope}
 
-  % % Fig 3
-  % \tikzmath{\c = 0.7; \cx = 0.1; \cy1 = (\ymax + \bh*2) / 2 - \c;}
-  % \draw (\s3,\ymax) .. controls (\s3+0.5-\cx,\cy1) .. (\s3+\cw1,\bh*2);
-  % \draw (\s3+\cw1,\bh*2) -- (\s3+\cw1,0) -- (\s3+\cw1+\width,0) -- (\s3+\cw1+\width,\bh*2);
-  % \draw (\s3+\cw1+\width,\bh*2) .. controls (\s3+\cw1+\width+1.5+\cx,\cy1) .. (\s3+\cw1*2+\width,\ymax);
-  % \draw[pattern={north east lines}] (\s3+\cw1,0) rectangle +(\width,\bh);
+  % Fig 3
+  \begin{scope}[xshift=7cm]
+    \tikzmath{\c = 0.7; \cy1 = (\ymax + \bh*2) / 2 - \c;}
+
+    \draw[very thick] (\width,0) rectangle +(\width,\bh);
+    \draw[pattern={north east lines}] (\width,0) rectangle +(\width,\bh);
+
+    \draw[very thick] (0,\ymax) .. controls (0.1,\cy1) .. (\width,\bh*2) -- (\width,\bh) -- (\width*2,\bh) -- (\width*2,\bh*2) .. controls (\width*3,\cy1) .. (\width*3,\ymax);
+    \clip (0,\ymax) .. controls (0.1,\cy1) .. (\width,\bh*2) -- (\width,\bh) -- (\width*2,\bh) -- (\width*2,\bh*2) .. controls (\width*3,\cy1) .. (\width*3,\ymax);
+
+    \foreach \y in {0, 0.3, ..., \ymax} {
+      \draw[thick]
+      plot[domain=0:\width*3, smooth, samples=50]
+      (\x, {1+sin(3*(\x) r + \y*5 r)*0.1 + \y});
+    }
+  \end{scope}
 
   % % Fig 4
   % \tikzmath{\m = 1.6;}
