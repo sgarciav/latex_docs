@@ -155,6 +155,41 @@
 \label{fig:Duhem-fig1}
 \end{figure}
 
+% @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}[auto, node distance=2.7cm, >=latex']
+
+  \tikzmath{\xmax = 20; \ymax = 8;}
+  % % comment out
+  % \draw[step=1cm,gray,very thin] (0,0) grid (\xmax,\ymax);
+
+  % Fig 1
+  \begin{scope}
+    \tikzmath{\w = 2.2; \h = 1.5; \tw = 1.5;}
+    \tikzmath{\maxw = 2*\w+\tw;}
+
+    \draw (0,0) -- (0,\h) -- (\w,\h) -- (\w,\ymax) -- (\w+\tw,\ymax) -- (\w+\tw,\h) -- (\maxw,\h) -- (\maxw,0) -- (0,0);
+    \clip (0,0) -- (0,\h) -- (\w,\h) -- (\w,\ymax) -- (\w+\tw,\ymax) -- (\w+\tw,\h) -- (\maxw,\h) -- (\maxw,0) -- (0,0);
+
+    \foreach \y in {0, 0.3, ..., \ymax} {
+      \draw[thick]
+      plot[domain=0:\maxw, smooth, samples=50]
+      (\x, {sin(3*\x r + \y*5 r)*0.1 + \y});
+    }
+  \end{scope}
+
+  % % Fig 2
+  % \begin{scope} []
+  % \end{scope}
+
+\end{tikzpicture}
+\end{center}
+ \caption{Duhem-1905N,fig-2}
+\label{fig:Duhem-fig2}
+\end{figure}
 
 % @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
