@@ -47,13 +47,29 @@
 \tikzstyle{arrow} = [->,>=stealth] % can add "thick" to make it bold
 \tikzset{radiation/.style={{decorate,decoration={expanding waves,angle=90,segment length=4pt}}}}
 
+\tikzdeclarepattern{
+  name=customdashed,
+  bounding box={(-0.5pt,-0.5pt) and (10*1,1pt)},
+  tile size={(10*1, 4pt)},
+  tile transformation={},
+  code={
+    % Dash lengths (in pt or any TeX length)
+    \draw[line width=0.4pt]
+    (0pt,0pt) -- (20pt,0pt)
+    (25pt,0pt) -- (38pt,0pt)
+    (43pt,0pt) -- (48pt,0pt)
+    (53pt,0pt) -- (85pt,0pt)
+    (90pt,0pt) -- (100pt,0pt);
+  }
+}
+
 %% new commands
 % ------------------
 \newcommand{\fixme}{\textcolor{red}{\textbf{fix me}} \space}
 \newcommand{\attention}[1]{\noindent \fixme \textcolor{red}{#1}}
 
-\definecolor{light-gray}{gray}{0.95}
-\newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
+% \definecolor{light-gray}{gray}{0.95}
+% \newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
 
 
 \begin{document}
@@ -74,18 +90,41 @@
   \tikzmath{\s4 = \s3+\cw1*2+\width+2 - \d;}
   \tikzmath{\s5 = \s4 + \d + 3;}
 
-  % comment out
-  \draw[step=1cm,gray,very thin] (0,0) grid (\xmax,\ymax);
+  % % comment out
+  % \draw[step=1cm,gray,very thin] (0,0) grid (\xmax,\ymax);
 
   % Fig 1
-  \draw (0,\ymax) -- (0,0) -- (\width,0) -- (\width,\ymax);
-  \draw (0,\bh) -- (\width,\bh);
+  \draw (0,\ymax) -- (0,\bh) -- (\width,\bh) -- (\width,\ymax);
+  \draw (0,0) rectangle +(\width,\bh);
   \draw[pattern={north east lines}] (0,0) rectangle +(\width,\bh);
+  \begin{scope}
+    \tikzmath{\width = 2;}
+    \clip (0,\ymax) -- (0,\bh) -- (\width,\bh) -- (\width,\ymax);
+
+    % \draw[thick, decorate, decoration={snake, amplitude=0.2mm, segment length=3mm}]
+
+    \foreach \y in {0, 0.3, ..., 6} {
+      \draw[thick]
+      plot[domain=0:\width, smooth, samples=50]
+      (\x, {1+sin(3*\x r + \y*5 r)*0.1 + \y});
+    }
+  \end{scope}
 
   % Fig 2
   \draw (\s2,\ymax) -- (\s2+\width,\bh*2) -- (\s2+\width,0) -- (\s2+\width*2,0);
+  % \fill[pattern=customdashed] (\s2,\ymax) -- (\s2+\width,\bh*2) -- (\s2+\width,0) -- (\s2+\width*2,0);
   \draw (\s2+\width*2,0) -- (\s2+\width*2,\bh*2) -- (\s2+\width,\ymax);
   \draw[pattern={north east lines}] (\s2+\width,0) rectangle +(\width,\bh);
+  \begin{scope}
+    % \tikzmath{\width = 2; \s2 = \width + 1; \bh = 1;}
+    \clip (\s2,\ymax) -- (\s2+\width,\bh*2) -- (\s2+\width,0) -- (\s2+\width*2,0);
+
+    \foreach \y in {0, 0.3, ..., 6} {
+      \draw[thick]
+      plot[domain=0:5, smooth, samples=50]
+      (\x+\s2, {1+sin(3*(\x+\s2) r + \y*5 r)*0.1 + \y});
+    }
+  \end{scope}
 
   % Fig 3
   \tikzmath{\c = 0.7; \cx = 0.1; \cy1 = (\ymax + \bh*2) / 2 - \c;}
