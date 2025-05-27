@@ -109,7 +109,7 @@
   \end{scope}
 
   % Fig 2
-  \begin{scope}[xshift=3cm]
+  \begin{scope}[xshift=2.7cm]
     \draw[very thick] (\width,0) rectangle +(\width,\bh);
     \draw[pattern={north east lines}] (\width,0) rectangle +(\width,\bh);
 
@@ -140,11 +140,23 @@
     }
   \end{scope}
 
-  % % Fig 4
-  % \tikzmath{\m = 1.6;}
-  % \draw (\s4,\ymax) -- (\s4-\cw2,\bh*\m) -- (\s4-\cw2,0) -- (\s4-\cw2+\width,0);
-  % \draw (\s4-\cw2+\width,0) -- (\s4-\cw2+\width,\bh*\m) -- (\s4+\d*2,\ymax);
-  % \draw[pattern={north east lines}] (\s4-\cw2,0) rectangle +(\width,\bh);
+  % Fig 4
+  \begin{scope}[xshift=13.5cm]
+    \tikzmath{\m = 1.6; \d = 0.15;}
+
+    \draw[very thick] (0,0) rectangle +(\width,\bh);
+    \draw[pattern={north east lines}] (0,0) rectangle +(\width,\bh);
+
+    \draw[very thick] (\width/2-\d,\ymax) -- (0,\bh*\m) -- (0,\bh) -- (\width,\bh) -- (\width,\bh*\m) -- (\width/2+\d,\ymax);
+
+    \clip (\width/2-\d,\ymax) -- (0,\bh*\m) -- (0,\bh) -- (\width,\bh) -- (\width,\bh*\m) -- (\width/2+\d,\ymax);
+
+    \foreach \y in {0, 0.3, ..., \ymax} {
+      \draw[thick]
+      plot[domain=0:\width, smooth, samples=50]
+      (\x, {1+sin(3*(\x) r + \y*5 r)*0.1 + \y});
+    }
+  \end{scope}
 
   % % Fig 5
   % % \draw(\s5,\ymax) -- (\s5,\bh*2);
