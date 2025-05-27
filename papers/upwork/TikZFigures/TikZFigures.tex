@@ -47,21 +47,21 @@
 \tikzstyle{arrow} = [->,>=stealth] % can add "thick" to make it bold
 \tikzset{radiation/.style={{decorate,decoration={expanding waves,angle=90,segment length=4pt}}}}
 
-\tikzdeclarepattern{
-  name=customdashed,
-  bounding box={(-0.5pt,-0.5pt) and (10*1,1pt)},
-  tile size={(10*1, 4pt)},
-  tile transformation={},
-  code={
-    % Dash lengths (in pt or any TeX length)
-    \draw[line width=0.4pt]
-    (0pt,0pt) -- (20pt,0pt)
-    (25pt,0pt) -- (38pt,0pt)
-    (43pt,0pt) -- (48pt,0pt)
-    (53pt,0pt) -- (85pt,0pt)
-    (90pt,0pt) -- (100pt,0pt);
-  }
-}
+% \tikzdeclarepattern{
+%   name=customdashed,
+%   bounding box={(-0.5pt,-0.5pt) and (10*1,1pt)},
+%   tile size={(10*1, 4pt)},
+%   tile transformation={},
+%   code={
+%     % Dash lengths (in pt or any TeX length)
+%     \draw[line width=0.4pt]
+%     (0pt,0pt) -- (20pt,0pt)
+%     (25pt,0pt) -- (38pt,0pt)
+%     (43pt,0pt) -- (48pt,0pt)
+%     (53pt,0pt) -- (85pt,0pt)
+%     (90pt,0pt) -- (100pt,0pt);
+%   }
+% }
 
 %% new commands
 % ------------------
@@ -85,68 +85,69 @@
   \tikzmath{\cw1 = \width;}
   \tikzmath{\d = 0.15; \cw2 = \width*0.5 - \d;}
 
-  \tikzmath{\s2 = \width + 1;}
-  \tikzmath{\s3 = \width*3 + 1.5;}
-  \tikzmath{\s4 = \s3+\cw1*2+\width+2 - \d;}
-  \tikzmath{\s5 = \s4 + \d + 3;}
+  % \tikzmath{\s2 = \width + 1;}
+  % \tikzmath{\s3 = \width*3 + 1.5;}
+  % \tikzmath{\s4 = \s3+\cw1*2+\width+2 - \d;}
+  % \tikzmath{\s5 = \s4 + \d + 3;}
 
   % % comment out
   % \draw[step=1cm,gray,very thin] (0,0) grid (\xmax,\ymax);
 
   % Fig 1
-  \draw (0,\ymax) -- (0,\bh) -- (\width,\bh) -- (\width,\ymax);
-  \draw (0,0) rectangle +(\width,\bh);
-  \draw[pattern={north east lines}] (0,0) rectangle +(\width,\bh);
   \begin{scope}
-    \tikzmath{\width = 2;}
-    \clip (0,\ymax) -- (0,\bh) -- (\width,\bh) -- (\width,\ymax);
+    \tikzmath{\width = 2; \bh = 1;}
 
-    % \draw[thick, decorate, decoration={snake, amplitude=0.2mm, segment length=3mm}]
+    \draw[very thick] (0,0) rectangle +(\width,\bh);
+    \draw[pattern={north east lines}] (0,0) rectangle +(\width,\bh);
+
+    \draw[very thick] (0,\ymax) -- (0,\bh) -- (\width,\bh) -- (\width,\ymax);
+    \clip (0,\ymax) -- (0,\bh) -- (\width,\bh) -- (\width,\ymax);
 
     \foreach \y in {0, 0.3, ..., 6} {
       \draw[thick]
       plot[domain=0:\width, smooth, samples=50]
-      (\x, {1+sin(3*\x r + \y*5 r)*0.1 + \y});
+      (\x, {\bh + sin(3*\x r + \y*5 r)*0.1 + \y});
     }
   \end{scope}
 
   % Fig 2
-  \draw (\s2,\ymax) -- (\s2+\width,\bh*2) -- (\s2+\width,0) -- (\s2+\width*2,0);
-  % \fill[pattern=customdashed] (\s2,\ymax) -- (\s2+\width,\bh*2) -- (\s2+\width,0) -- (\s2+\width*2,0);
-  \draw (\s2+\width*2,0) -- (\s2+\width*2,\bh*2) -- (\s2+\width,\ymax);
-  \draw[pattern={north east lines}] (\s2+\width,0) rectangle +(\width,\bh);
-  \begin{scope}
-    % \tikzmath{\width = 2; \s2 = \width + 1; \bh = 1;}
-    \clip (\s2,\ymax) -- (\s2+\width,\bh*2) -- (\s2+\width,0) -- (\s2+\width*2,0);
+  \begin{scope}[xshift=3cm]
+    \tikzmath{\width = 2; \bh = 1;}
+
+    \draw[very thick] (\width,0) rectangle +(\width,\bh);
+    \draw[pattern={north east lines}] (\width,0) rectangle +(\width,\bh);
+
+    \draw[very thick] (0,\ymax) -- (\width,\bh*2) -- (\width,\bh) -- (\width*2,\bh) -- (\width*2,\bh*2) -- (\width,\ymax);
+    \clip (0,\ymax) -- (\width,\bh*2) -- (\width,\bh) -- (\width*2,\bh) -- (\width*2,\bh*2) -- (\width,\ymax);
 
     \foreach \y in {0, 0.3, ..., 6} {
       \draw[thick]
-      plot[domain=0:5, smooth, samples=50]
-      (\x+\s2, {1+sin(3*(\x+\s2) r + \y*5 r)*0.1 + \y});
+      plot[domain=0:\width*2, smooth, samples=50]
+      (\x, {1+sin(3*(\x) r + \y*5 r)*0.1 + \y});
     }
   \end{scope}
 
-  % Fig 3
-  \tikzmath{\c = 0.7; \cx = 0.1; \cy1 = (\ymax + \bh*2) / 2 - \c;}
-  \draw (\s3,\ymax) .. controls (\s3+0.5-\cx,\cy1) .. (\s3+\cw1,\bh*2);
-  \draw (\s3+\cw1,\bh*2) -- (\s3+\cw1,0) -- (\s3+\cw1+\width,0) -- (\s3+\cw1+\width,\bh*2);
-  \draw (\s3+\cw1+\width,\bh*2) .. controls (\s3+\cw1+\width+1.5+\cx,\cy1) .. (\s3+\cw1*2+\width,\ymax);
-  \draw[pattern={north east lines}] (\s3+\cw1,0) rectangle +(\width,\bh);
+  % % Fig 3
+  % \tikzmath{\c = 0.7; \cx = 0.1; \cy1 = (\ymax + \bh*2) / 2 - \c;}
+  % \draw (\s3,\ymax) .. controls (\s3+0.5-\cx,\cy1) .. (\s3+\cw1,\bh*2);
+  % \draw (\s3+\cw1,\bh*2) -- (\s3+\cw1,0) -- (\s3+\cw1+\width,0) -- (\s3+\cw1+\width,\bh*2);
+  % \draw (\s3+\cw1+\width,\bh*2) .. controls (\s3+\cw1+\width+1.5+\cx,\cy1) .. (\s3+\cw1*2+\width,\ymax);
+  % \draw[pattern={north east lines}] (\s3+\cw1,0) rectangle +(\width,\bh);
 
-  % Fig 4
-  \tikzmath{\m = 1.6;}
-  \draw (\s4,\ymax) -- (\s4-\cw2,\bh*\m) -- (\s4-\cw2,0) -- (\s4-\cw2+\width,0);
-  \draw (\s4-\cw2+\width,0) -- (\s4-\cw2+\width,\bh*\m) -- (\s4+\d*2,\ymax);
-  \draw[pattern={north east lines}] (\s4-\cw2,0) rectangle +(\width,\bh);
+  % % Fig 4
+  % \tikzmath{\m = 1.6;}
+  % \draw (\s4,\ymax) -- (\s4-\cw2,\bh*\m) -- (\s4-\cw2,0) -- (\s4-\cw2+\width,0);
+  % \draw (\s4-\cw2+\width,0) -- (\s4-\cw2+\width,\bh*\m) -- (\s4+\d*2,\ymax);
+  % \draw[pattern={north east lines}] (\s4-\cw2,0) rectangle +(\width,\bh);
 
-  % Fig 5
-  % \draw(\s5,\ymax) -- (\s5,\bh*2);
-  \draw (\s5-1,\bh) arc (180 : 90 : 0.8cm);
-  \draw (\s5-1,\bh) -- (\s5-1,0) -- (\s5-1+\width,0) -- (\s5-1+\width,\bh);
-  \draw (\s5-1+\width,\bh) arc (0 : 90 : 0.8cm);
-  \draw(\s5-1+0.8,\ymax) -- (\s5-1+0.8,\bh*1.8);
-  \draw(\s5-1+1.2,\ymax) -- (\s5-1+1.2,\bh*1.8);
-  \draw[pattern={north east lines}] (\s5-1,0) rectangle +(\width,\bh);
+  % % Fig 5
+  % % \draw(\s5,\ymax) -- (\s5,\bh*2);
+  % \draw (\s5-1,\bh) arc (180 : 90 : 0.8cm);
+  % \draw (\s5-1,\bh) -- (\s5-1,0) -- (\s5-1+\width,0) -- (\s5-1+\width,\bh);
+  % \draw (\s5-1+\width,\bh) arc (0 : 90 : 0.8cm);
+  % \draw(\s5-1+0.8,\ymax) -- (\s5-1+0.8,\bh*1.8);
+  % \draw(\s5-1+1.2,\ymax) -- (\s5-1+1.2,\bh*1.8);
+  % \draw[pattern={north east lines}] (\s5-1,0) rectangle +(\width,\bh);
 
 
 \end{tikzpicture}
@@ -176,7 +177,7 @@
     \clip (\w,\ymax) -- (\w,\h) -- (0,\h) -- (0,0) -- (\maxw,0) -- (\maxw,\h) -- (\w+\tw,\h) -- (\w+\tw,\ymax);
 
     \foreach \y in {0, 0.3, ..., \ymax} {
-      \draw[very thick]
+      \draw[thick]
       plot[domain=0:\maxw, smooth, samples=50]
       (\x, {sin(3*\x r + \y*5 r)*0.1 + \y});
     }
@@ -192,7 +193,7 @@
     \clip (0,\ymax) -- (0,0) -- (\width,0) -- (\width,\ymax);
 
     \foreach \y in {0, 0.3, ..., \ymax} {
-      \draw[very thick]
+      \draw[thick]
       plot[domain=0:\width, smooth, samples=50]
       (\x, {sin(3*\x r + \y*5 r)*0.1 + \y});
     }
