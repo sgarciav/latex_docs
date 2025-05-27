@@ -162,28 +162,41 @@
 \begin{center}
 \begin{tikzpicture}[auto, node distance=2.7cm, >=latex']
 
-  \tikzmath{\xmax = 20; \ymax = 8;}
-  % % comment out
-  % \draw[step=1cm,gray,very thin] (0,0) grid (\xmax,\ymax);
+  \tikzmath{\ymax = 8;}
 
   % Fig 1
   \begin{scope}
-    \tikzmath{\w = 2.2; \h = 1.5; \tw = 1.5;}
+    \tikzmath{\w = 2.2; \h = 1.4; \tw = 1.4;}
     \tikzmath{\maxw = 2*\w+\tw;}
 
-    \draw (0,0) -- (0,\h) -- (\w,\h) -- (\w,\ymax) -- (\w+\tw,\ymax) -- (\w+\tw,\h) -- (\maxw,\h) -- (\maxw,0) -- (0,0);
-    \clip (0,0) -- (0,\h) -- (\w,\h) -- (\w,\ymax) -- (\w+\tw,\ymax) -- (\w+\tw,\h) -- (\maxw,\h) -- (\maxw,0) -- (0,0);
+    \draw (\maxw/2,\ymax) node[above]{\LARGE E};
+
+    \draw[very thick] (\w,\ymax) -- (\w,\h) -- (0,\h) node[above]{\LARGE K} -- (0,0) node[below]{\LARGE A} -- node[below]{\LARGE F} (\maxw,0) node[below]{\LARGE B} -- (\maxw,\h) node[above]{\LARGE L} -- (\w+\tw,\h) node[above right]{\LARGE I} -- (\w+\tw,\ymax);
+
+    \clip (\w,\ymax) -- (\w,\h) -- (0,\h) -- (0,0) -- (\maxw,0) -- (\maxw,\h) -- (\w+\tw,\h) -- (\w+\tw,\ymax);
 
     \foreach \y in {0, 0.3, ..., \ymax} {
-      \draw[thick]
+      \draw[very thick]
       plot[domain=0:\maxw, smooth, samples=50]
       (\x, {sin(3*\x r + \y*5 r)*0.1 + \y});
     }
   \end{scope}
 
-  % % Fig 2
-  % \begin{scope} []
-  % \end{scope}
+  % Fig 2
+  \begin{scope}[xshift=8cm]
+    \tikzmath{\width = 5;}
+
+    \draw (\width/2,\ymax) node[above]{\LARGE G};
+    \draw[very thick] (0,\ymax) -- (0,0) node[below]{\LARGE C} -- node[below]{\LARGE H} (\width,0) node[below]{\LARGE D} -- (\width,\ymax);
+
+    \clip (0,\ymax) -- (0,0) -- (\width,0) -- (\width,\ymax);
+
+    \foreach \y in {0, 0.3, ..., \ymax} {
+      \draw[very thick]
+      plot[domain=0:\width, smooth, samples=50]
+      (\x, {sin(3*\x r + \y*5 r)*0.1 + \y});
+    }
+  \end{scope}
 
 \end{tikzpicture}
 \end{center}
