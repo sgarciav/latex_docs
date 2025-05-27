@@ -81,13 +81,6 @@
 \begin{center}
 \begin{tikzpicture}[auto, node distance=2.7cm, >=latex']
 
-  % \tikzmath{\d = 0.15; \cw2 = \width*0.5 - \d;}
-
-  % \tikzmath{\s2 = \width + 1;}
-  % \tikzmath{\s3 = \width*3 + 1.5;}
-  % \tikzmath{\s4 = \s3+\cw1*2+\width+2 - \d;}
-  % \tikzmath{\s5 = \s4 + \d + 3;}
-
   % % comment out
   % \draw[step=1cm,gray,very thin] (0,0) grid (20,\ymax);
 
@@ -158,14 +151,22 @@
     }
   \end{scope}
 
-  % % Fig 5
-  % % \draw(\s5,\ymax) -- (\s5,\bh*2);
-  % \draw (\s5-1,\bh) arc (180 : 90 : 0.8cm);
-  % \draw (\s5-1,\bh) -- (\s5-1,0) -- (\s5-1+\width,0) -- (\s5-1+\width,\bh);
-  % \draw (\s5-1+\width,\bh) arc (0 : 90 : 0.8cm);
-  % \draw(\s5-1+0.8,\ymax) -- (\s5-1+0.8,\bh*1.8);
-  % \draw(\s5-1+1.2,\ymax) -- (\s5-1+1.2,\bh*1.8);
-  % \draw[pattern={north east lines}] (\s5-1,0) rectangle +(\width,\bh);
+  % Fig 5
+  \begin{scope}[xshift=16.5cm]
+    \tikzmath{\d = 0.2; \yd = 1.8;}
+
+    \draw[very thick] (0,0) rectangle +(\width,\bh);
+    \draw[pattern={north east lines}] (0,0) rectangle +(\width,\bh);
+
+    \draw[very thick] (\width/2-\d,\ymax) -- (\width/2-\d,\bh*\yd) arc (90 : 180 : 0.8cm) -- (\width,\bh) arc (0 : 90 : 0.8cm) -- (\width/2+\d,\ymax);
+    \clip (\width/2-\d,\ymax) -- (\width/2-\d,\bh*\yd) arc (90 : 180 : 0.8cm) -- (\width,\bh) arc (0 : 90 : 0.8cm) -- (\width/2+\d,\ymax);
+
+    \foreach \y in {0, 0.3, ..., \ymax} {
+      \draw[thick]
+      plot[domain=0:\width, smooth, samples=50]
+      (\x, {1+sin(3*(\x) r + \y*5 r)*0.1 + \y});
+    }
+  \end{scope}
 
 
 \end{tikzpicture}
