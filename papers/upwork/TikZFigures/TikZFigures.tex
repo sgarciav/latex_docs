@@ -109,7 +109,7 @@
     \draw[very thick] (0,\ymax) -- (\width,\bh*2) -- (\width,\bh) -- (\width*2,\bh) -- (\width*2,\bh*2) -- (\width,\ymax);
     \clip (0,\ymax) -- (\width,\bh*2) -- (\width,\bh) -- (\width*2,\bh) -- (\width*2,\bh*2) -- (\width,\ymax);
 
-    \foreach \y in {0, 0.3, ..., \ymax} {
+    \foreach \y in {0, 0.28, ..., \ymax} {
       \draw[thick]
       plot[domain=0:\width*2, smooth, samples=50]
       (\x, {1+sin(3*(\x) r + \y*5 r)*0.1 + \y});
@@ -126,7 +126,7 @@
     \draw[very thick] (0,\ymax) .. controls (0.1,\cy1) .. (\width,\bh*2) -- (\width,\bh) -- (\width*2,\bh) -- (\width*2,\bh*2) .. controls (\width*3,\cy1) .. (\width*3,\ymax);
     \clip (0,\ymax) .. controls (0.1,\cy1) .. (\width,\bh*2) -- (\width,\bh) -- (\width*2,\bh) -- (\width*2,\bh*2) .. controls (\width*3,\cy1) .. (\width*3,\ymax);
 
-    \foreach \y in {0, 0.3, ..., \ymax} {
+    \foreach \y in {0, 0.28, ..., \ymax} {
       \draw[thick]
       plot[domain=0:\width*3, smooth, samples=50]
       (\x, {1+sin(3*(\x) r + \y*5 r)*0.1 + \y});
