@@ -263,31 +263,24 @@
 \begin{center}
 \begin{tikzpicture}[auto, node distance=2.7cm, >=latex']
 
-  \tikzmath{\ymax = 16; \b = 1; \tmax = 11;}
+  \tikzmath{\ymax = 11; \b = 0.7; \xmax = 5; \width = 0.7; \th = 6.4;}
+  \tikzmath{\lt = \xmax - \width/2;}
+  \tikzmath{\rt = \xmax - \width/2;}
+  \tikzmath{\r1 = 0.8; \r2 = 1.2; \r3 = 1 - \r1;}
 
   % % comment out
   % \draw[step=1cm,gray,very thin] (0,0) grid (10,\ymax);
 
-  \draw (1,\b) -- (1,\ymax) -- (2,\ymax) -- (2,\b+1);
-  \draw (1,\b) arc (180 : 270 : 1cm) node[below left]{C};
-  \draw (2,\b+1) arc (180 : 270 : 1cm);
+  \draw[very thick] (0,\ymax) -- (0,\b) arc (180 : 270 : \r1) node[below]{\LARGE C} -- (\rt,\b-\r1) arc (270 : 360 : \r1);
+  \draw[very thick] (\rt+\r1,\b) -- node[right]{\LARGE D} (\rt+\r1,\r1+\b) arc (270 : 360 : \r2) -- (\rt+\r1+\r2,\r2+\th) node[right]{\LARGE F} -- (\lt-\r2,\r2+\th);
+  \draw[very thick] (\lt-\r2,\r2+\th) node[left]{\LARGE E} -- (\lt-\r2,\r1+\r2+\b) arc(180 : 270 : \r2) node[right]{\LARGE I} -- (\lt,\b) arc(360 : 270 : \r3);
+  \draw[very thick] (\lt-\r3,\b-\r3) -- (\b+\r3,\b-\r3) arc (270 : 180 : \r3) -- (\b,\ymax) -- (0,\ymax);
 
-  \draw (2,\b-1) -- (7,\b-1);
-  \draw (7,\b-1) arc (270 : 360 : 1cm);
+  \draw[very thick] (\lt-\r2,\r1+0.6+\th/2) node[left]{\LARGE Q} -- (\lt-\r2+\r2*2+0.8,\r1+0.6+\th/2);
+  \draw[very thick] (\lt-\r2,\r1+0.6+\th/2+0.55) node[left]{\LARGE C} -- (\lt-\r2+\r2*2+0.8,\r1+0.6+\th/2+0.55) node[right]{\LARGE H};
 
-  \draw (3,\b) -- (6,\b);
-  \draw (6,\b) arc (270 : 360 : 1cm);
-
-  \draw (7,\b+1) -- (7,\b+2) node[above right]{I};
-  \draw (7,\b+2) arc (270 : 180 : 2cm);
-
-  \draw (8,\b) -- (8,\b+2) node[below right]{D};
-  \draw (8,\b+2) arc (270 : 360 : 2cm);
-
-  \draw (5,\b+4) -- (5,\tmax) node[left]{E} -- (10,\tmax) node[right]{F} -- (10,\b+4);
-  \draw (5,7) -- (5,8) node[left]{C} -- (10,8) node[right]{H} -- (10,7) -- (5,7) node[left]{Q};
-  \draw (1,8) node[left]{L} -- (2,8);
-  \draw (1,\ymax-3) node[left]{A} -- (2,\ymax-3) node[right]{B};
+  \draw[very thick] (0,\ymax-2) node[left]{\LARGE A} -- (\b,\ymax-2) node[right]{\LARGE B};
+  \draw[very thick] (0,\r1+0.6+\th/2+0.55) node[left]{\LARGE L} -- (\b,\r1+0.6+\th/2+0.55);
 
 \end{tikzpicture}
 \end{center}
