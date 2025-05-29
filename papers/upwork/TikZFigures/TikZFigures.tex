@@ -189,9 +189,9 @@
     \tikzmath{\w = 2.2; \h = 1.4; \tw = 1.4;}
     \tikzmath{\maxw = 2*\w+\tw;}
 
-    \draw (\maxw/2,\ymax) node[above]{\LARGE E};
+    \draw (\maxw/2,\ymax) node[above]{\large E};
 
-    \draw[very thick] (\w,\ymax) -- (\w,\h) -- (0,\h) node[above]{\LARGE K} -- (0,0) node[below]{\LARGE A} -- node[below]{\LARGE F} (\maxw,0) node[below]{\LARGE B} -- (\maxw,\h) node[above]{\LARGE L} -- (\w+\tw,\h) node[above right]{\LARGE I} -- (\w+\tw,\ymax);
+    \draw[very thick] (\w,\ymax) -- (\w,\h) -- (0,\h) node[above]{\large K} -- (0,0) node[below]{\large A} -- node[below]{\large F} (\maxw,0) node[below]{\large B} -- (\maxw,\h) node[above]{\large L} -- (\w+\tw,\h) node[above right]{\large I} -- (\w+\tw,\ymax);
 
     \clip (\w,\ymax) -- (\w,\h) -- (0,\h) -- (0,0) -- (\maxw,0) -- (\maxw,\h) -- (\w+\tw,\h) -- (\w+\tw,\ymax);
 
@@ -206,8 +206,8 @@
   \begin{scope}[xshift=8cm]
     \tikzmath{\width = 5;}
 
-    \draw (\width/2,\ymax) node[above]{\LARGE G};
-    \draw[very thick] (0,\ymax) -- (0,0) node[below]{\LARGE C} -- node[below]{\LARGE H} (\width,0) node[below]{\LARGE D} -- (\width,\ymax);
+    \draw (\width/2,\ymax) node[above]{\large G};
+    \draw[very thick] (0,\ymax) -- (0,0) node[below]{\large C} -- node[below]{\large H} (\width,0) node[below]{\large D} -- (\width,\ymax);
 
     \clip (0,\ymax) -- (0,0) -- (\width,0) -- (\width,\ymax);
 
@@ -236,11 +236,11 @@
   \tikzmath{\o = 3.2; \e = \o + \w3;}
   \tikzmath{\width = \w1 + \w2 + \w3;}
 
-  \draw[very thick] (\w1+\w2,\e) rectangle +(\w3,\ymax-\e) node[right]{\LARGE A};
-  \draw[very thick] (\w1+\w2,\o) rectangle +(\w3,\w3) node[right]{\LARGE E};
+  \draw[very thick] (\w1+\w2,\e) rectangle +(\w3,\ymax-\e) node[right]{\large A};
+  \draw[very thick] (\w1+\w2,\o) rectangle +(\w3,\w3) node[right]{\large E};
   \draw[pattern={north east lines}] (\w1+\w2,\o) rectangle +(\w3,\w3);
 
-  \draw[very thick] (0,\ymax) node[left]{\LARGE F} -- (0,0) -- (\w1+\w2+\w3,0) node[right]{\LARGE U} -- (\w1+\w2+\w3,\o) node[right]{\LARGE O} -- (\w1+\w2,\o) -- (\w1+\w2,\bh) -- (\w1,\bh) -- (\w1,\ymax);
+  \draw[very thick] (0,\ymax) node[left]{\large F} -- (0,0) -- (\w1+\w2+\w3,0) node[right]{\large U} -- (\w1+\w2+\w3,\o) node[right]{\large O} -- (\w1+\w2,\o) -- (\w1+\w2,\bh) -- (\w1,\bh) -- (\w1,\ymax);
 
   \clip (0,\ymax) -- (0,0) -- (\w1+\w2+\w3,0) -- (\w1+\w2+\w3,\o) -- (\w1+\w2,\o) -- (\w1+\w2,\bh) -- (\w1,\bh) -- (\w1,\ymax);
 
@@ -271,16 +271,16 @@
   % % comment out
   % \draw[step=1cm,gray,very thin] (0,0) grid (10,\ymax);
 
-  \draw[very thick] (0,\ymax) -- (0,\b) arc (180 : 270 : \r1) node[below]{\LARGE C} -- (\rt,\b-\r1) arc (270 : 360 : \r1);
-  \draw[very thick] (\rt+\r1,\b) -- node[right]{\LARGE D} (\rt+\r1,\r1+\b) arc (270 : 360 : \r2) -- (\rt+\r1+\r2,\r2+\th) node[right]{\LARGE F} -- (\lt-\r2,\r2+\th);
-  \draw[very thick] (\lt-\r2,\r2+\th) node[left]{\LARGE E} -- (\lt-\r2,\r1+\r2+\b) arc(180 : 270 : \r2) node[right]{\LARGE I} -- (\lt,\b) arc(360 : 270 : \r3);
+  \draw[very thick] (0,\ymax) -- (0,\b) arc (180 : 270 : \r1) node[below]{\large C} -- (\rt,\b-\r1) arc (270 : 360 : \r1);
+  \draw[very thick] (\rt+\r1,\b) -- node[right]{\large D} (\rt+\r1,\r1+\b) arc (270 : 360 : \r2) -- (\rt+\r1+\r2,\r2+\th) node[right]{\large F} -- (\lt-\r2,\r2+\th);
+  \draw[very thick] (\lt-\r2,\r2+\th) node[left]{\large E} -- (\lt-\r2,\r1+\r2+\b) arc(180 : 270 : \r2) node[right]{\large I} -- (\lt,\b) arc(360 : 270 : \r3);
   \draw[very thick] (\lt-\r3,\b-\r3) -- (\b+\r3,\b-\r3) arc (270 : 180 : \r3) -- (\b,\ymax) -- (0,\ymax);
 
-  \draw[very thick] (\lt-\r2,\r1+0.6+\th/2) node[left]{\LARGE Q} -- (\lt-\r2+\r2*2+0.8,\r1+0.6+\th/2);
-  \draw[very thick] (\lt-\r2,\r1+0.6+\th/2+0.55) node[left]{\LARGE C} -- (\lt-\r2+\r2*2+0.8,\r1+0.6+\th/2+0.55) node[right]{\LARGE H};
+  \draw[very thick] (\lt-\r2,\r1+0.6+\th/2) node[left]{\large Q} -- (\lt-\r2+\r2*2+0.8,\r1+0.6+\th/2);
+  \draw[very thick] (\lt-\r2,\r1+0.6+\th/2+0.55) node[left]{\large C} -- (\lt-\r2+\r2*2+0.8,\r1+0.6+\th/2+0.55) node[right]{\large H};
 
-  \draw[very thick] (0,\ymax-2) node[left]{\LARGE A} -- (\b,\ymax-2) node[right]{\LARGE B};
-  \draw[very thick] (0,\r1+0.6+\th/2+0.55) node[left]{\LARGE L} -- (\b,\r1+0.6+\th/2+0.55);
+  \draw[very thick] (0,\ymax-2) node[left]{\large A} -- (\b,\ymax-2) node[right]{\large B};
+  \draw[very thick] (0,\r1+0.6+\th/2+0.55) node[left]{\large L} -- (\b,\r1+0.6+\th/2+0.55);
 
 \end{tikzpicture}
 \end{center}
