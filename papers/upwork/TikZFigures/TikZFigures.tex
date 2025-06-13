@@ -270,9 +270,8 @@
   % \draw[step=1cm,gray,very thin] (0,0) grid (\xmax*2,\ymax);
 
   \draw[very thick] (0,\ymax) -- (0,\b) arc (180 : 270 : \r1) node[left, xshift=-1.5em]{\large C} -- (\rt,\b-\r1) arc (270 : 360 : \r1);
-  \draw[very thick] (\rt+\r1,\b) -- node[above, yshift=0.9em]{\large D} (\rt+\r1,\r1+\b) arc (270 : 360 : \r2) -- (\rt+\r1+\r2,\r1+\b+\r2+\th) node[right]{\large F} -- (\lt-\r2,\r1+\b+\r2+\th);
-  \draw[very thick] (\lt-\r2,\r1+\b+\r2+\th) node[left]{\large E} -- (\lt-\r2,\r1+\r2+\b) arc(180 : 270 : \r2) node[above, yshift=0.08em]{\large I} -- (\lt,\b+\r3) arc(360 : 270 : \r3);
-  \draw[very thick] (\lt-\r3,\b) -- (\b+\r3,\b) arc (270 : 180 : \r3) -- (\b,\ymax) -- (0,\ymax);
+  \draw[very thick] (\rt+\r1,\b) -- node[above, yshift=0.9em]{\large D} (\rt+\r1,\r1+\b) arc (270 : 360 : \r2) -- (\rt+\r1+\r2,\r1+\b+\r2+\th) node[right]{\large F} -- (\lt-\r2,\r1+\b+\r2+\th) node[left]{\large E} -- (\lt-\r2,\r1+\r2+\b) arc(180 : 270 : \r2) node[above, yshift=0.08em]{\large I} -- (\lt,\b+\r3) arc(360 : 270 : \r3);
+  \draw[very thick] (\lt-\r3,\b) -- (\b+\r3,\b) arc (270 : 180 : \r3) -- (\b,\ymax) -- (0,\ymax) -- (0,\b);
   \tikzmath{\tw = \r1+2*\r2;}
 
   % Two horizontal lines
